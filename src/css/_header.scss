@@ -45,6 +45,10 @@
     transform: translateX(-50%);
     text-align: center;
     width: 60%;
+    @media (max-width: 425px) {
+      top: 40%;
+      width: 80%;
+    }
   }
   &__btn-download {
     background-color: transparent;
@@ -55,6 +59,9 @@
     transform: translateX(-50%);
     width: 170px;
     height: 50px;
+    @media (max-width: 425px) {
+      top: 42%;
+    }
   }
   &__btn-download-img {
     width: 170px;
