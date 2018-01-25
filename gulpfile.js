@@ -37,7 +37,7 @@ gulp.task('watch', function() {
   // 1. Watch js files, then inject to index.html
   gulp.watch('src/js/*.js', ['inject:js'])
   // 2. Watch scss, compile to css, add auto-prefixer, then inject to index.html
-  gulp.watch('src/css/*.scss', ['inject:css'])
+  gulp.watch('src/css/main.scss', ['inject:css'])
 
   gulp.watch('index.html', function() {
     return gulp.src('index.html')

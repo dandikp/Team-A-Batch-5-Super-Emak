@@ -10,24 +10,31 @@
   <!-- endinject -->
 </head>
 <body>
-  <div class="navbar__wrapper">
+  <div class="navbar__wrapper navbar__wrapper--is-transparent">
     <div class="navbar navbar--is-transparent" role="navigation">
       <div class="navbar__logo">
         <i class="navbar__logo-img"></i>
-        <span class="navbar__logo-txt">Super Emak</span>
       </div>
       <div class="navbar__nav-wrapper">
-        <nav class="navbar__nav">Cara Kerja</nav>
-        <nav class="navbar__nav">Fitur</nav>
-        <nav class="navbar__nav">Download</nav>
+        <a href="#cara-kerja"><nav class="navbar__nav">Cara Kerja</nav></a>
+        <a href="#fitur"><nav class="navbar__nav">Fitur</nav></a>
+        <a href="#download"><nav class="navbar__nav">Download</nav></a>
       </div>
-      <div class="navbar__btn-hamburger"></div>
+      <div class="navbar__btn-hamburger">Menu</div>
     </div>
   </div>
-  <!--header class="header">
-    <div class="heading">A Job Marketplace for Mama.</div>
-    <button class="header__btn-download"></button>
-  </header>
+  <div class="header__wrapper">  
+    <header id="header" class="header">
+      <div class="header__heading">A Job Marketplace for Mama who want to work at home.</div>
+      <a href="#" class="header__btn-download">
+        <img class="header__btn-download-img" src="src/img/btn-download.png" alt="download button">
+      </a>
+    </header>
+    <div class="header__mask"></div>
+  </div>
+  <section id="intro" class="intro">
+
+  </section>
 
   <!-- inject:js -->
   <script src="/src/js/main.js"></script>
