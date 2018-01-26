@@ -4,24 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Super Emak</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/src/css/main.css">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/src/css/main.css">
+  <!-- endinject -->
 </head>
 <body>
   <div class="navbar__wrapper">
     <div class="navbar" role="navigation">
       <div class="navbar__logo">
-        <div class="navbar__logo-txt"></div>
+        <a href="#" class="navbar__logo-txt"></a>
       </div>
       <div class="navbar__nav-wrapper">
-        <a href="#cara-kerja"><nav class="navbar__nav">Cara Kerja</nav></a>
-        <a href="#fitur"><nav class="navbar__nav">Fitur</nav></a>
-        <a href="#download"><nav class="navbar__nav">Download</nav></a>
+        <a href="#cara-kerja" class="navbar__nav">Cara Kerja</a>
+        <a href="#fitur" class="navbar__nav">Fitur</a>
+        <a href="#download" class="navbar__nav">Download</a>
       </div>
       <div class="navbar__btn-menu"></div>
+      <div class="navbar__btn-close"></div>
     </div>
   </div>
-  <div class="dropdown"></div>
+  <div class="dropdown">
+    <a href="#cara_kerja" class="dropdown__nav">Cara Kerja</a>
+    <a href="#fitur" class="dropdown__nav">Fitur</a>
+    <a href="#download" class="dropdown__nav">Download</a>
+  </div>
   <div class="header__wrapper">  
     <header id="header" class="header">
       <div class="header__heading">A Job Marketplace for Mama who want to work at home.</div>
@@ -31,9 +40,14 @@
     </header>
     <div class="header__mask"></div>
   </div>
-  <section id="intro" class="intro">
-  </section>
-
+  <div class="intro__wrapper">
+    <section class="intro">
+    </section>
+  </div>
+  
+  <!-- inject:js -->
+  <script src="/src/js/main.js"></script>
+  <!-- endinject -->
   <script src="/src/js/main.js"></script>
 </body>
 </html>

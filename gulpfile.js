@@ -25,7 +25,7 @@ var postcss = require('gulp-postcss')
 var autoprefixer = require('autoprefixer')
 var concat = require('gulp-concat')
 var rename = require('gulp-rename')
-var uglify = require('gulp-uglify')
+var uglify = require('gulp-uglify-es').default
 var cleanCSS = require('gulp-clean-css')
 var inject = require('gulp-inject')
 var imagemin = require('gulp-imagemin')
@@ -37,7 +37,7 @@ gulp.task('watch', function() {
   // 1. Watch js files, then inject to index.html
   gulp.watch('src/js/*.js', ['inject:js'])
   // 2. Watch scss, compile to css, add auto-prefixer, then inject to index.html
-  gulp.watch('src/css/main.scss', ['inject:css'])
+  gulp.watch('src/css/*.scss', ['inject:css'])
 
   gulp.watch('index.html', function() {
     return gulp.src('index.html')
