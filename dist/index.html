@@ -1,15 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="src/main.min.css">
+  <link rel="stylesheet" href="src/css/main.min.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
 
-  
+<body>
+  <div class="navbar__wrapper">
+    <div class="navbar" role="navigation">
+      <div class="navbar__logo">
+        <a href="#" class="navbar__logo-txt"></a>
+      </div>
+      <div class="navbar__nav-wrapper">
+        <a href="#model" class="navbar__nav">How it works</a>
+        <a href="#benefits" class="navbar__nav">Benefits</a>
+        <a href="#download" class="navbar__nav">Download</a>
+      </div>
+      <button class="navbar__btn-menu"></button>
+      <button class="navbar__btn-close"></button>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="#model" class="dropdown__nav">How it works</a>
+    <a href="#benefits" class="dropdown__nav">Benefits</a>
+    <a href="#download" class="dropdown__nav">Download</a>
+  </div>
+  <div class="header__wrapper">
+    <header id="header" class="header">
+      <div class="header__heading">A Job Marketplace for Mama who want to work at home.</div>
+      <a href="#" class="header__btn-download">
+        <img class="header__btn-download-img" src="src/img/btn-download.png" alt="download button">
+      </a>
+    </header>
+    <div class="header__mask"></div>
+  </div>
+  <div class="intro__wrapper">
+    <section class="intro">
+      <div class="intro__content-wrapper">
+        <div class="intro__content-img">
+        </div>
+        <div class="intro__content-txt-wrapper">
+          <p class="intro__content-txt">Super Emak memfasilitasi para ibu yang ingin bekerja dengan mempertemukan mereka dengan para supplier / pengusaha
+            yang mencari pekerja. Kami menjembatani para ibu dengan menawarkan kemudahan dalam mencari pekerjaan yang dekat
+            dengan rumah (berbasis lokasi), jam kerja fleksibel, serta sesuai dengan kemampuan mereka. Dan di lain sisi kami
+            juga membantu supplier / pengusaha mencari pekerja dengan kontrak yang singkat, sehingga dapat meminimalisir
+            pengeluaran produksi apabila dalam suatu periode terdapat permintaan produksi yang lebih.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="model" class="model__wrapper">
+    <div class="model">
+      <header class="model__title">How Super Emak Works</header>
+      <div class="model__step-wrapper">
+        <div class="model__step">
+          <div class="model__circle model__circle--1"></div>
+          <div class="model__description">Pada tahap awal supplier akan mem-posting lowongan pekerjaan yang sedang dibutuhkan dan dengan persyaratan yang
+            mereka ajukan.</div>
+        </div>
+        <div class="model__step">
+          <div class="model__circle model__circle--2"></div>
+          <div class="model__description">Pencari kerja akan mencari dan memilih pekerjaan sesuai dengan kemampuan mereka dan kesanggupan dengan syarat dan
+            ketentuan dari pekerjaan tersebut.</div>
+        </div>
+        <div class="model__step">
+          <div class="model__circle model__circle--3"></div>
+          <div class="model__description">Supplier akan memilih pekerja yang melamar di lowongan pekerjaan yang mereka buka. Disini supplier akan menyeleksi
+            para pelamar pekerjaan sesuai dengan kebutuhan mereka.
+          </div>
+        </div>
+        <div class="model__step">
+          <div class="model__circle model__circle--4"></div>
+          <div class="model__description">Pelamar pekerjaan akan menerima pemberitahuan bahwa lamaran mereka telah diterima dan akan ditentukan kapan mereka
+            mulai bekerja dengan supplier.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="benefits" class="benefits__wrapper">
+    <section class="benefits">
+      <header class="benefits__title">Why you should join us</header>
+      <div class="benefits__subtitle">Jobseeker</div>
+      <div class="benefits__item-wrapper">
+        <div class="benefits__item">
+          <div class="benefits__item-icon"></div>
+          <div class="benefits__item-title">Durasi pendek</div>
+          <div class="benefits__item-description">Pekerjaan yang dilakukan adalah pekerjaan dengan durasi yang pendek, sehingga pekerjaan rumah tidak terbengkalai.</div>
+        </div>
+        <div class="benefits__item">
+          <div class="benefits__item-icon"></div>
+          <div class="benefits__item-title">Pekerjaan yang sesuai</div>
+          <div class="benefits__item-description">Anda dapat melakukan pencarian pekerjaan sesuai dengan minat dan kemampuan anda.</div>
+        </div>
+      </div>
+      <div class="benefits__subtitle">Supplier</div>
+      <div class="benefits__item-wrapper">
+        <div class="benefits__item">
+          <div class="benefits__item-icon"></div>
+          <div class="benefits__item-title">Kontrak pendek</div>
+          <div class="benefits__item-description">Kontrak dengan pekerja hanya berlaku pada satu pekerjaan sehingga dapat memotong biaya yang tidak diinginkan.</div>
+        </div>
+        <div class="benefits__item">
+          <div class="benefits__item-icon"></div>
+          <div class="benefits__item-title">Pekerja berkualitas</div>
+          <div class="benefits__item-description">Dengan adanya sistem review, supplier dapat memilih pekerja yang sesuai dengan pekerjaan yang akan diberikan.</div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div id="download" class="download__wrapper">
+    <div class="download">
+      <div class="download__subtitle">Interested in joining us?</div>
+      <header class="download__title">Download our App Now!</header>
+      <a href="#download" class="download__btn-download">
+        <img class="download__btn-download-img" src="src/img/btn-download.png"></img>
+      </a>
+    </div>
+  </div>
+  <footer id="footer" class="footer__wrapper">
+    <div class="footer">
+      <div class="footer__title">Super Emak &copy; Team A Batch 5</div>
+    </div>
+  </footer>
+
+  <script src="src/js/main.min.js"></script>
 </body>
+
 </html>

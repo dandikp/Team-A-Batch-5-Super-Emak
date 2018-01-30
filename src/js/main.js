@@ -19,18 +19,32 @@
   })
 
   menu.addEventListener('click', function(e) {
+    openDropdown()
+  })
+
+  close.addEventListener('click', function(e) {
+   closeDropdown()
+  })
+
+  for (nav of dropdownNavs) {
+    nav.addEventListener('click', function(e) {
+      closeDropdown()
+    })
+  }
+
+  function openDropdown() {
     navbarWrapper.classList.add('navbar__wrapper--no-shadow')
     menu.classList.add('navbar__btn-menu--not-visible')
     dropdown.classList.add('dropdown--visible')
     close.classList.add('navbar__btn-close--visible')
-  })
+  }
 
-  close.addEventListener('click', function(e) {
+  function closeDropdown() {
     navbarWrapper.classList.remove('navbar__wrapper--no-shadow')
     menu.classList.remove('navbar__btn-menu--not-visible')
     dropdown.classList.remove('dropdown--visible')
     close.classList.remove('navbar__btn-close--visible')
-  })
+  }
 
   function isScrolled() {
     navbar.classList.add('navbar--scrolled')
