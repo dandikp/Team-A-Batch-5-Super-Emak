@@ -18,6 +18,7 @@
 
 /* Import dependencies */
 var gulp = require('gulp')
+var plumber = require('gulp-plumber')
 var sourcemaps = require('gulp-sourcemaps')
 var livereload = require('gulp-livereload')
 var sass = require('gulp-sass')
@@ -25,7 +26,7 @@ var postcss = require('gulp-postcss')
 var autoprefixer = require('autoprefixer')
 var concat = require('gulp-concat')
 var rename = require('gulp-rename')
-var uglify = require('gulp-uglify-es').default
+var uglify = require('gulp-uglify')
 var cleanCSS = require('gulp-clean-css')
 var inject = require('gulp-inject')
 var imagemin = require('gulp-imagemin')
@@ -33,23 +34,24 @@ var cache = require('gulp-cache')
 
 /* Dev Mode */
 /* Watch changes */
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   // 1. Watch js files, then inject to index.html
-  gulp.watch('src/js/*.js', ['inject:js'])
+  gulp.watch('src/**/*.js', ['inject:js'])
   // 2. Watch scss, compile to css, add auto-prefixer, then inject to index.html
-  gulp.watch('src/css/*.scss', ['inject:css'])
-
-  gulp.watch('index.html', function() {
-    return gulp.src('index.html')
-      .pipe(livereload({ start: true }))
-  })
+  gulp.watch('src/**/*.scss', ['inject:css'])
+  // 3. Watch html files
+  gulp.watch('src/**/*.html', ['watch:html'])
 })
 
-gulp.task('inject:js', function() {
+gulp.task('inject:js', function () {
   var target = gulp.src('index.html')
 
   var sources = gulp.src([
-    'src/js/*.js'
+    'src/**/*.module.js',
+    'src/**/*.route.js',
+    'src/**/*.factory.js',
+    'src/**/*.controller.js',
+    'src/**/*.component.js'
   ])
 
   return target
@@ -58,32 +60,40 @@ gulp.task('inject:js', function() {
     .pipe(livereload({ start: true }))
 })
 
-gulp.task('compile:scss', function() {
-  var target = gulp.src('src/css/*.scss')
+gulp.task('compile:scss', function () {
+  var target = gulp.src('src/**/*.scss')
 
   return target
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('src/css'))
 })
 
 
-gulp.task('inject:css', ['compile:scss'], function() {
+gulp.task('inject:css', ['compile:scss'], function () {
   var target = gulp.src('index.html')
 
   var sources = gulp.src([
-    'src/css/*.css'
+    'src/css/**/*.css'
   ])
 
   return target
     .pipe(inject(sources))
     .pipe(gulp.dest(''))
+    .pipe(livereload({ start: true }))
+})
+
+gulp.task('watch:html', function () {
+  var target = gulp.src('index.html')
+
+  return target
     .pipe(livereload({ start: true }))
 })
 
 gulp.task('dev', [
   'inject:js',
   'inject:css',
+  'watch:html',
   'watch'
 ])
 
@@ -93,38 +103,48 @@ gulp.task('dev', [
  * 
  */
 
-gulp.task('minify:js', function() {
+gulp.task('minify:js', function () {
   return gulp.src([
-    'src/js/*.js'
+    'src/**/*.module.js',
+    'src/**/*.store.js',
+    'src/**/*.controller.js',
+    'src/**/*.component.js',
+    'src/**/*.route.js',
+    'src/**/*.js'
   ])
     .pipe(sourcemaps.init())
-        .pipe(concat('main.js'))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(uglify().on('error', function(err) {
-        console.log(err)
-      }))
+    .pipe(concat('main.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify().on('error', function (err) {
+      console.log(err)
+    }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist/src/js'))
+    .pipe(gulp.dest('dist/js'))
 })
 
-gulp.task('minify:css', function() {
-  return gulp.src('src/css/*.css')
+gulp.task('minify:css', function () {
+  return gulp.src('src/css/**/*.css')
     .pipe(sourcemaps.init())
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(concat('main.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS({ compability: 'ie8' }))
-    .pipe(gulp.dest('dist/src/css'))
+    .pipe(gulp.dest('dist/css'))
 })
 
-gulp.task('minify:img', function() {
+gulp.task('minify:img', function () {
   return gulp.src('src/img/*')
-  .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-  .pipe(gulp.dest('dist/src/img'))
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('dist/src/img'))
 })
 
+gulp.task('handle:html', function () {
+  return gulp.src('src/**/*.html')
+    .pipe(gulp.dest('dist/src'))
+})
 
 gulp.task('build', [
+  'handle:html',
   'minify:js',
   'minify:css',
   'minify:img'

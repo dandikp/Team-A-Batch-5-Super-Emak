@@ -1,15 +1,20 @@
 {
-  "name": "boilerplate-html-css",
+  "name": "angularjs-boilerplate",
   "version": "1.0.0",
-  "description": "A simple boilerplate for slicing psd to html",
+  "description": "angularjs simple boilerplate using gulp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "null"
+    "url": "none"
   },
+  "keywords": [
+    "angularjs",
+    "gulp",
+    "boilerplate"
+  ],
   "author": "irhamhqm@gmail.com",
   "license": "MIT",
   "devDependencies": {
@@ -21,11 +26,17 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-inject": "^4.3.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
     "gulp-uglify": "^3.0.0",
-    "gulp-uglify-es": "^1.0.0",
     "gulp-watch": "^5.0.0"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.7",
+    "angular": "^1.6.8",
+    "angular-route": "^1.6.8"
   }
 }
