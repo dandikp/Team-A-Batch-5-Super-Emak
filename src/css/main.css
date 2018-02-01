@@ -26,12 +26,12 @@ a {
   padding: 0 24px;
   left: 50%;
   transform: translateX(-50%); }
-  @media screen and (max-width: 640px) {
-    .navbar {
-      padding: 0 8px; } }
   @media screen and (max-width: 960px) {
     .navbar {
       padding: 0 14px; } }
+  @media screen and (max-width: 600px) {
+    .navbar {
+      padding: 0 8px; } }
   .navbar__wrapper {
     z-index: 1;
     width: 100%;
@@ -154,7 +154,7 @@ a {
       .sidebar__header {
         display: -webkit-flex;
         display: flex;
-        height: 56px;
+        min-height: 56px;
         box-shadow: inset 0 -3px #eceff1;
         padding: 0 8px; } }
   .sidebar__menu-btn {
@@ -166,12 +166,12 @@ a {
     background-color: transparent;
     cursor: pointer;
     padding: 10px; }
-    @media screen and (min-width: 900px) {
+    @media screen and (max-width: 900px) {
       .sidebar__menu-btn {
         margin: 0 14px 0 0; } }
-    @media screen and (min-width: 600px) {
+    @media screen and (max-width: 600px) {
       .sidebar__menu-btn {
-        margin: 0 8px 0 0; } }
+        margin: 0 6px 0 0; } }
     .sidebar__menu-btn::after {
       top: 50%;
       left: 50%;
@@ -251,3 +251,5 @@ a {
   .main__wrapper {
     margin: 56px 0 0 240px;
     height: 1000px; }
+
+/*# sourceMappingURL=main.css.map */

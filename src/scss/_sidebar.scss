@@ -56,7 +56,7 @@
         @media screen and (max-width: 600px) {
             display: -webkit-flex;
             display: flex;
-            height: 56px;
+            min-height: 56px;
             box-shadow: inset 0 -3px rgb(236, 239, 241);
             padding: 0 8px;
         }
@@ -72,12 +72,12 @@
         cursor: pointer;
         padding: 10px;
 
-        @media screen and (min-width: 900px) {
+        @media screen and (max-width: 900px) {
             margin: 0 14px 0 0;
         }
 
-        @media screen and (min-width: 600px) {
-            margin: 0 8px 0 0;
+        @media screen and (max-width: 600px) {
+            margin: 0 6px 0 0;
         }
 
         &::after {
