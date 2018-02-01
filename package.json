@@ -1,0 +1,25 @@
+{
+  "name": "CMS-Admin",
+  "version": "0.0.0",
+  "description": "CMS for Super Emak",
+  "main": "index.js",
+  "repository": "git@gitlab.com:Binar/Batch5-TeamA-Frontend.git",
+  "author": "Dandi Pratama <dandi.karunia@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  }
+}
