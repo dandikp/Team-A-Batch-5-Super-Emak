@@ -16,7 +16,6 @@
     }
 
     &__wrapper {
-        visibility: hidden;
         margin-top: 56px;
         position: fixed;
         height: 100%;
@@ -27,6 +26,7 @@
         background-color: transparent;
 
         @media screen and (max-width: 960px) {
+            visibility: hidden;
             z-index: 200;
             margin-top: 0;
             width: 0;

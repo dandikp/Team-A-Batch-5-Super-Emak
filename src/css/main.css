@@ -120,7 +120,6 @@ a {
       z-index: 202;
       width: 240px; } }
   .sidebar__wrapper {
-    visibility: hidden;
     margin-top: 56px;
     position: fixed;
     height: 100%;
@@ -131,6 +130,7 @@ a {
     background-color: transparent; }
     @media screen and (max-width: 960px) {
       .sidebar__wrapper {
+        visibility: hidden;
         z-index: 200;
         margin-top: 0;
         width: 0;
