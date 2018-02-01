@@ -50,6 +50,7 @@ gulp.task('inject:js', function () {
     'src/**/*.module.js',
     'src/**/*.route.js',
     'src/**/*.factory.js',
+    'src/**/*.service.js',
     'src/**/*.controller.js',
     'src/**/*.component.js'
   ])

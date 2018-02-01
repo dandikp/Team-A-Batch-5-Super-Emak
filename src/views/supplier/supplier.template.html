@@ -1,1 +1,13 @@
 This is supplier page
+<a ui-sref="supplierAdd">
+  <button>Add Supplier</button>
+</a>
+<div ng-repeat="supplier in vm.supplier">
+  {{ supplier.name }} ||
+  {{ supplier.address }} ||
+  <a ui-sref="supplierEdit({id: $index})">
+    <button>Edit</button>
+  </a> ||
+  <button ng-click="vm.deleteSupplier($index)">Delete</button>
+</div>
+<ui-view></ui-view>

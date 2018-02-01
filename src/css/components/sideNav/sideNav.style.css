@@ -1,0 +1,26 @@
+.side-nav {
+  background-color: #aaaaaa;
+  color: #282828;
+  height: 100vh;
+  position: fixed;
+  width: 230px;
+  z-index: 99; }
+  .side-nav__header {
+    position: relative;
+    height: 150px; }
+  .side-nav__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .side-nav__nav {
+    display: block;
+    padding: 15px 20px; }
+    .side-nav__nav--active {
+      background-color: gainsboro;
+      color: #282828; }
+  .side-nav__nav-icon {
+    display: inline-block;
+    padding-right: 10px;
+    width: 20px; }

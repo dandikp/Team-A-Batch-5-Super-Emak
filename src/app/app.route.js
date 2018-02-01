@@ -6,20 +6,37 @@
   config.$inject = ['$stateProvider', '$urlRouterProvider']
 
   function config($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('', '/')
+    $urlRouterProvider.when('', 'home')
+    var viewUrl = 'src/views/'
 
     $stateProvider
       .state('home', {
-        url: '/',
-        templateUrl: 'src/views/home/home.template.html',
-        controller: 'homeCtrl',
-        controllerAs: 'vm'
+        url: '/home',
+        component: 'home'
       })
       .state('supplier', {
         url: '/supplier',
-        templateUrl: 'src/views/supplier/supplier.template.html',
-        controller: 'supplierCtrl',
-        controllerAs: 'vm'
+        component: 'supplier'
+      })
+      .state('supplierAdd', {
+        url: 'supplier/add',
+        component: 'supplierAdd'
+      })
+      .state('supplierEdit', {
+        url: 'supplier/edit/:id',
+        component: 'supplierEdit'
+      })
+      .state('jobseeker', {
+        url: '/jobseeker',
+        component: 'jobseeker'
+      })
+      .state('categories', {
+        url: '/categories',
+        component: 'categories'
+      })
+      .state('jobs', {
+        url: '/jobs',
+        component: 'jobs'
       })
   
   }
