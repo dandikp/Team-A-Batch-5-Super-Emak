@@ -166,7 +166,7 @@ a {
     background-color: transparent;
     cursor: pointer;
     padding: 10px; }
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 960px) {
       .sidebar__menu-btn {
         margin: 0 14px 0 0; } }
     @media screen and (max-width: 600px) {
@@ -208,7 +208,7 @@ a {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 56px);
     overflow-y: auto; }
   .sidebar__nav-wrapper {
     display: -webkit-flex;
