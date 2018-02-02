@@ -1,8 +1,8 @@
 (function() {
     var openSideBarTrigger = document.getElementsByClassName('navbar__menu-btn')[0]
-    var closeSideBarTrigger = document.getElementsByClassName('sidebar__menu-btn')[0]
-    var sideBarWrapper = document.getElementsByClassName('sidebar__wrapper')[0]
-    var sideBar = document.getElementsByClassName('sidebar')
+    var closeSideBarTrigger = document.getElementsByClassName('side-nav__menu-btn')[0]
+    var sideBarWrapper = document.getElementsByClassName('side-nav__wrapper')[0]
+    var sideBar = document.getElementsByClassName('side-nav')
 
     openSideBarTrigger.addEventListener('click', function() {
         openSideBar()
@@ -17,10 +17,10 @@
     })
 
     function openSideBar() {
-        sideBarWrapper.classList.add('sidebar__wrapper--open')
+        sideBarWrapper.classList.add('side-nav__wrapper--open')
     }
 
     function closeSideBar() {
-        sideBarWrapper.classList.remove('sidebar__wrapper--open')
+        sideBarWrapper.classList.remove('side-nav__wrapper--open')
     }
 })()

@@ -1,0 +1,14 @@
+{
+    "jobId": "",
+    "name": "",
+    "foto": "",
+    "description": "",
+    "fee": "",
+    "startDate": "",
+    "endDate": "",
+    "quantity": "",
+    "status": "draft/open/onGoing/done",
+    "supplierId": "",
+    "applicantIds": "list mamaId applying the job",
+    "workerId": "mamaId working on job"
+}

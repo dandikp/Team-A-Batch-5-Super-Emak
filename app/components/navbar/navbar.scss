@@ -1,0 +1,113 @@
+.navbar {
+    background-color: rgb(255, 255, 255);
+    color: rgb(40, 40, 40);
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    height: 100%;
+    box-shadow: inset 0 -3px rgb(236, 239, 241);
+    padding: 0 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 960px) {
+        padding: 0 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 0 8px;
+    }
+
+    &__wrapper {
+        z-index: 1;
+        width: 100%;
+        height: 56px;
+        position: fixed;
+        top: 0;
+        background-color: transparent;
+    }
+
+    &__logo-wrapper {
+        display: -webkit-flex;
+        display: flex;
+        flex: 1;
+        position: relative;
+    }
+
+    &__logo {
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        height: 24px;
+        width: 125px;
+        position: relative;
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__menu-btn {
+        background-color: transparent;
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width: 960px) {
+            display: -webkit-inline-flex;
+            display: inline-flex;
+            align-self: center;
+            align-content: center;
+            align-items: center;
+            margin: 0 14px 0 0;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            display: -webkit-inline-flex;
+            display: inline-flex;
+            align-self: center;
+            align-content: center;
+            align-items: center;
+            margin: 0 6px 0 0;
+            padding: 10px;
+        }
+
+        &:active {
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            background-color: rgba(50, 50, 50, .3);
+        }
+
+        &::after {
+            top: 50%;
+            left: 50%;
+            height: 20px;
+            width: 20px;
+            content: '';
+            background-image: url('../../../img/menu-btn.svg');
+            background-size: cover;
+        }
+    }
+
+    &__nav-wrapper {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+    }
+
+    &__nav {
+        align-self: center;
+        font-size: .9rem;
+        line-height: .9rem;
+        color: #282828;
+
+        i {
+            margin: 5px;
+        }
+    }
+}
