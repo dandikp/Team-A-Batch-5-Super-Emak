@@ -7,11 +7,27 @@
     function routerConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('dashboard', {
-                url: '/home',
+                url: '/dashboard',
                 component: 'dashboard'
+            })
+            .state('seeker', {
+                url: '/seeker',
+                component: 'seeker'
+            })
+            .state('supplier', {
+                url: '/supplier',
+                component: 'supplier'
+            })
+            .state('categories', {
+                url: '/categories',
+                component: 'categories'
+            })
+            .state('jobs', {
+                url: '/jobs',
+                component: 'jobs'
             })
         
         $urlRouterProvider
-            .when('', 'home')
+            .when('/', 'dashboard')
     }
 })()
