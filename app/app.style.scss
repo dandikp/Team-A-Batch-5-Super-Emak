@@ -19,6 +19,14 @@ a {
     text-decoration: none;
 }
 
-@import 'navbar';
-@import 'sidebar';
-@import 'main-cnt';
+.main {
+    &__wrapper {
+        margin-top: 56px;
+        margin-left: 240px;
+        background-color: transparent;
+
+        @media screen and (max-width: 960px) {
+            margin-left: 1px;
+        }
+    }
+}

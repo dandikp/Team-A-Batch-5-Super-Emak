@@ -21,4 +21,4 @@ a {
   background-color: transparent; }
   @media screen and (max-width: 960px) {
     .main__wrapper {
-      margin-left: 0; } }
+      margin-left: 1px; } }
