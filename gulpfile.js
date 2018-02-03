@@ -22,7 +22,7 @@ gulp.task('compile-scss', function() {
   sass(devConfig.scss)
     .on('error', sass.logError)
     .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest('./app/assets/css/'))
+    .pipe(gulp.dest('./src/assets/css/'))
 })
 
 gulp.task('rename', function() {
@@ -55,7 +55,7 @@ gulp.task('watch-html', function() {
 })
 
 gulp.task('watch', function() {  
-  gulp.watch('./app/**/*.scss', ['inject-css'])
-  gulp.watch('./app/**/*.js', ['inject-js'])
-  gulp.watch('./app/**/*.html', ['watch-html'])
+  gulp.watch('./src/**/*.scss', ['inject-css'])
+  gulp.watch('./src/**/*.js', ['inject-js'])
+  gulp.watch('./src/**/*.html', ['watch-html'])
 })

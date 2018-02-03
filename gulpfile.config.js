@@ -1,19 +1,19 @@
 module.exports = {
     dev: {
-        scss: './app/**/*.scss',
+        scss: './src/**/*.scss',
         css: [
             './node_modules/font-awesome/css/font-awesome.css',
-            './app/assets/css/**/*.css'
+            './src/assets/css/**/*.css'
         ],
         js: [
             './node_modules/angular/angular.min.js',
             './node_modules/@uirouter/angularjs/release/angular-ui-router.js',
-            './app/**/*.module.js',
-            './app/**/*.routes.js',
-            './app/**/*.controller.js',
-            './app/**/*.component.js',
-            './app/**/*.service.js',
-            './app/assets/**/*.js'
+            './src/**/*.module.js',
+            './src/**/*.routes.js',
+            './src/**/*.controller.js',
+            './src/**/*.component.js',
+            './src/**/*.service.js',
+            './src/assets/**/*.js'
         ]
     }
 }

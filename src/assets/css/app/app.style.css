@@ -1,0 +1,35 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px; }
+
+body {
+  background-color: transparent; }
+
+a {
+  text-decoration: none; }
+
+.main {
+  background-color: transparent;
+  height: 100%;
+  width: 100%; }
+  .main__wrapper {
+    top: 0;
+    left: 0;
+    margin: 56px 0 0 240px;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    position: relative;
+    width: calc(100% - 240px);
+    min-height: calc(100% - 56px);
+    background-color: transparent; }
+    @media screen and (max-width: 960px) {
+      .main__wrapper {
+        margin-left: 0px;
+        width: 100%; } }
