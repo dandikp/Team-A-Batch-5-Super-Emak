@@ -19,11 +19,11 @@
         component: 'supplier'
       })
       .state('supplierAdd', {
-        url: 'supplier/add',
+        url: '/supplier/add',
         component: 'supplierAdd'
       })
       .state('supplierEdit', {
-        url: 'supplier/edit/:id',
+        url: '/supplier/edit/:id',
         component: 'supplierEdit'
       })
       .state('jobseeker', {

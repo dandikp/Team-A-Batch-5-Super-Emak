@@ -6,13 +6,38 @@
   service.$inject = ['$window']
 
   function service($window) {
-    var storage = $window.localStorage
     var service = {}
 
     service.supplier = [
       {
         'name': 'Irham',
-        'address': 'Imogiri Barat km.4'
+        'address': 'Imogiri Barat km.4',
+        'company': 'Amikom'
+      },
+      {
+        'name': 'Irham',
+        'address': 'Imogiri Barat km.4',
+        'company': 'Binar'
+      },
+      {
+        'name': 'Irham',
+        'address': 'Imogiri Barat km.4',
+        'company': 'Amikom'
+      },
+      {
+        'name': 'Irham',
+        'address': 'Imogiri Barat km.4',
+        'company': 'Binar'
+      },
+      {
+        'name': 'Irham',
+        'address': 'Imogiri Barat km.4',
+        'company': 'Amikom'
+      },
+      {
+        'name': 'Irham',
+        'address': 'Imogiri Barat km.4',
+        'company': 'Binar'
       }
     ]
     service.getAllSupplier = getAllSupplier

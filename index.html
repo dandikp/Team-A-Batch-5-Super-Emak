@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>AngularJS Boilerplate</title>
-  <base href="/">  
+  <base href="/">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
   <!-- inject:css -->
   <link rel="stylesheet" href="/src/css/app/app.style.css">
   <link rel="stylesheet" href="/src/css/components/navbar/navbar.style.css">
-  <link rel="stylesheet" href="/src/css/components/sideNav/sideNav.style.css">
   <link rel="stylesheet" href="/src/css/views/categories/categories.style.css">
   <link rel="stylesheet" href="/src/css/views/home/home.style.css">
+  <link rel="stylesheet" href="/src/css/components/sideNav/sideNav.style.css">
   <link rel="stylesheet" href="/src/css/views/jobs/jobs.style.css">
-  <link rel="stylesheet" href="/src/css/views/jobseeker/jobseeker.style.css">
   <link rel="stylesheet" href="/src/css/views/supplier/supplier.style.css">
+  <link rel="stylesheet" href="/src/css/views/jobseeker/jobseeker.style.css">
   <link rel="stylesheet" href="/src/css/views/supplierAdd/supplierAdd.style.css">
   <link rel="stylesheet" href="/src/css/views/supplierEdit/supplierEdit.style.css">
   <!-- endinject -->
@@ -22,8 +23,12 @@
 <body>
   <app></app>
   
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+  <script src="node_modules/angular-datatables/dist/angular-datatables.js"></script>
+  <link rel="stylesheet" href="node_modules/angular-datatables/dist/css/angular-datatables.min.css">
   <!-- inject:js -->
   <script src="/src/app/app.module.js"></script>
   <script src="/src/app/app.route.js"></script>
@@ -33,21 +38,21 @@
   <script src="/src/components/sideNav/sideNav.controller.js"></script>
   <script src="/src/views/categories/categories.controller.js"></script>
   <script src="/src/views/home/home.controller.js"></script>
+  <script src="/src/views/jobseeker/jobseeker.controller.js"></script>
   <script src="/src/views/jobs/jobs.controller.js"></script>
   <script src="/src/views/supplier/supplier.controller.js"></script>
-  <script src="/src/views/jobseeker/jobseeker.controller.js"></script>
-  <script src="/src/views/supplierAdd/supplierAdd.controller.js"></script>
   <script src="/src/views/supplierEdit/supplierEdit.controller.js"></script>
+  <script src="/src/views/supplierAdd/supplierAdd.controller.js"></script>
   <script src="/src/app/app.component.js"></script>
   <script src="/src/components/navbar/navbar.component.js"></script>
   <script src="/src/components/sideNav/sideNav.component.js"></script>
   <script src="/src/views/categories/categories.component.js"></script>
   <script src="/src/views/home/home.component.js"></script>
+  <script src="/src/views/jobseeker/jobseeker.component.js"></script>
   <script src="/src/views/jobs/jobs.component.js"></script>
   <script src="/src/views/supplier/supplier.component.js"></script>
-  <script src="/src/views/jobseeker/jobseeker.component.js"></script>
-  <script src="/src/views/supplierAdd/supplierAdd.component.js"></script>
   <script src="/src/views/supplierEdit/supplierEdit.component.js"></script>
+  <script src="/src/views/supplierAdd/supplierAdd.component.js"></script>
   <!-- endinject -->
 </body>
 </html>

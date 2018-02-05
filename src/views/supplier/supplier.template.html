@@ -2,12 +2,28 @@ This is supplier page
 <a ui-sref="supplierAdd">
   <button>Add Supplier</button>
 </a>
-<div ng-repeat="supplier in vm.supplier">
-  {{ supplier.name }} ||
-  {{ supplier.address }} ||
-  <a ui-sref="supplierEdit({id: $index})">
-    <button>Edit</button>
-  </a> ||
-  <button ng-click="vm.deleteSupplier($index)">Delete</button>
-</div>
-<ui-view></ui-view>
+<table datatable="ng" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Company</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="supplier in vm.supplier">
+      <td>{{ $index }}</td>
+      <td>{{ supplier.name }}</td>
+      <td>{{ supplier.address }}</td>
+      <td>{{ supplier.company }}</td>
+      <td>
+        <a ui-sref="supplierEdit({id: $index})">
+          <button>Edit</button>
+        </a>
+        <button ng-click="vm.deleteSupplier($index)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
