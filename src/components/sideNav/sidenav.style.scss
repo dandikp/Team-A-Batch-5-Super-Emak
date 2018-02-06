@@ -3,8 +3,7 @@
     flex-direction: column;
     position: relative;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     height: 100%;
     width: 100%;
     background-color: rgb(245, 245, 245);
@@ -19,8 +18,7 @@
         position: fixed;
         height: 100%;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         width: 240px;
         background-color: transparent;
 
