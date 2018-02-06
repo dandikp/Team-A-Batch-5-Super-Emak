@@ -11,14 +11,14 @@
             "./gulpfile.config.js",
             "./index.template.html",
             "./package.json",
-            ".gitignore",
-            "README.md"
+            "./.gitignore",
+            "./README.md"
         ]
     },
     "files": [
         "./index.html",
-        "./app/**/*.js",
-        "./app/**/*.css",
-        "./app/**/*.html"
+        "./src/**/*.js",
+        "./src/**/*.css",
+        "./src/**/*.html"
     ]
 }
