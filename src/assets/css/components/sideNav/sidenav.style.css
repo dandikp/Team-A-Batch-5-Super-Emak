@@ -8,9 +8,7 @@
           flex-direction: column;
   position: relative;
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 0;
   height: 100%;
   width: 100%;
   background-color: whitesmoke; }
@@ -23,9 +21,7 @@
     position: fixed;
     height: 100%;
     left: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    top: 0;
     width: 240px;
     background-color: transparent; }
     @media screen and (max-width: 960px) {

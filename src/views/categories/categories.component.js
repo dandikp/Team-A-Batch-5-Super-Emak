@@ -1,7 +1,7 @@
 (function() {
     angular.module('app')
         .component('categories', {
-            templateUrl: './src/views/categories/categories.view.html',
+            templateUrl: './src/views/categories/categories.template.html',
             controller: 'CategoriesController',
             controllerAs: 'vm'
         })

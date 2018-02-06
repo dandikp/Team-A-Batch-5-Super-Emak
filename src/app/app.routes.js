@@ -29,5 +29,6 @@
         
         $urlRouterProvider
             .when('/', 'dashboard')
+            .when('', 'dashboard')
     }
 })()

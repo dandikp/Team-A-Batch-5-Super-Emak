@@ -23,8 +23,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "lite-server": "^2.3.0",
-    "run-sequence": "^2.2.1",
-    "gulp-livereload": "^3.8.1"
+    "run-sequence": "^2.2.1"
   },
   "scripts": {
     "dev": "lite-server -c bs-config.json"

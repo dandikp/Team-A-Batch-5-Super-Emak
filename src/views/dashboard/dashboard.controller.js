@@ -1,8 +1,8 @@
 (function() {
     angular.module('app')
-        .controller('DasboardController', DasboardController)
+        .controller('DashboardController', DashboardController)
     
-    DasboardController.$inject = []
+    DashboardController.$inject = []
 
-    function DasboardController() { }
+    function DashboardController() { }
 })()

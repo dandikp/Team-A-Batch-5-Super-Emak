@@ -7,12 +7,9 @@ var rename = require('gulp-rename')
 var sass = require('gulp-ruby-sass')
 var postcss = require('gulp-postcss')
 var autoprefixer = require('autoprefixer')
-var livereload = require('gulp-livereload')
 var runSequence = require('run-sequence')
 
-/**
- * DEV MODE
- */
+/** DEV MODE */
 
 gulp.task('dev', function(callback) {
   runSequence(['compile-scss', 'rename'], 'inject-css', 'inject-js', 'watch', callback)
@@ -37,7 +34,6 @@ gulp.task('inject-css', ['compile-scss'], function() {
       read: false
     })))
     .pipe(gulp.dest('.'))
-    .pipe(livereload({ start: true }))
 })
 
 gulp.task('inject-js', function() {
@@ -46,12 +42,10 @@ gulp.task('inject-js', function() {
       read: false
     })))
     .pipe(gulp.dest('.'))
-    .pipe(livereload({ start: true }))
 })
 
 gulp.task('watch-html', function() {
   return gulp.src('index.html')
-    .pipe(livereload({ start: true }))
 })
 
 gulp.task('watch', function() {  
