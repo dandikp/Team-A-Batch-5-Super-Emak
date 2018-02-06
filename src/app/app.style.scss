@@ -20,16 +20,22 @@ a {
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     background-color: transparent;
+    padding: 0 24px;
     height: 100%;
     width: 100%;
 
+    @media screen and (max-width: 600px) {
+        padding: 0 16px;
+    }
+
     &__wrapper {
-        top: 0;
-        left: 0;
         margin: 56px 0 0 240px;
-        transform: translate(0, 0);
-        position: relative;
+        padding: 12px 0;
+        position: fixed;
         width: calc(100% - 240px);
         min-height: calc(100% - 56px);
         background-color: transparent;
