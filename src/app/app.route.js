@@ -30,10 +30,6 @@
         url: '/jobseeker',
         component: 'jobseeker'
       })
-      .state('categories', {
-        url: '/categories',
-        component: 'categories'
-      })
       .state('jobs', {
         url: '/jobs',
         component: 'jobs'

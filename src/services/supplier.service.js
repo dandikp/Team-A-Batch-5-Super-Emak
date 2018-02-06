@@ -3,10 +3,11 @@
     .module('app')
     .factory('supplierService', service)
 
-  service.$inject = ['$window']
+  service.$inject = ['$window', '$http']
 
-  function service($window) {
+  function service($window, $http) {
     var service = {}
+    var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/suppliers'
 
     service.supplier = [
       {
@@ -49,6 +50,19 @@
     return service
 
     function getAllSupplier() {
+      $http({
+        method: 'GET',
+        url: baseUrl,
+        header: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      })
+      .then((response)=> {
+        service.supplier = response.data
+      }, ()=> {
+        $window.alert(response.statusText)
+      })
+      
       return service.supplier
     }
 

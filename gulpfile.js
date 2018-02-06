@@ -18,7 +18,6 @@
 
 /* Import dependencies */
 var gulp = require('gulp')
-var plumber = require('gulp-plumber')
 var sourcemaps = require('gulp-sourcemaps')
 var livereload = require('gulp-livereload')
 var sass = require('gulp-sass')
@@ -105,14 +104,15 @@ gulp.task('dev', [
  */
 
 gulp.task('minify:js', function () {
-  return gulp.src([
+  var sources = gulp.src([
     'src/**/*.module.js',
-    'src/**/*.store.js',
-    'src/**/*.controller.js',
-    'src/**/*.component.js',
     'src/**/*.route.js',
-    'src/**/*.js'
+    'src/**/*.factory.js',
+    'src/**/*.service.js',
+    'src/**/*.controller.js',
+    'src/**/*.component.js'
   ])
+  return sources
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(rename({ suffix: '.min' }))
