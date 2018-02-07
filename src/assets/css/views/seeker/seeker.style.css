@@ -123,8 +123,13 @@
     .seeker__table thead {
       border: 1px solid #d6d6d6;
       background-color: #f2f2f2; }
+    .seeker__table tbody {
+      border: 1px solid #d6d6d6;
+      background-color: #ffffff; }
     .seeker__table tr {
       min-width: 30px; }
+      .seeker__table tr:hover {
+        background-color: rgba(232, 232, 232, 0.4); }
     .seeker__table th, .seeker__table td {
-      padding: 5px 0;
+      padding: 5px 8px;
       border: 1px solid #d4cfcf; }

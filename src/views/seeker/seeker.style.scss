@@ -108,13 +108,22 @@
             border: 1px solid #d6d6d6;
             background-color: #f2f2f2;
         }
+        
+        tbody {
+            border: 1px solid #d6d6d6;
+            background-color: #ffffff;
+        }
 
         tr {
             min-width: 30px;
+
+            &:hover {
+                background-color: rgba(232, 232, 232, .4);
+            }
         }
 
         th, td {
-            padding: 5px 0;
+            padding: 5px 8px;
             border: 1px solid #d4cfcf;
         }
     }
