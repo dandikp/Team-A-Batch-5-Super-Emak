@@ -4,7 +4,8 @@
   "description": "angularjs simple boilerplate using gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.7",
     "angular": "^1.6.8",
+    "angular-base64-upload": "^0.1.23",
     "angular-datatables": "^0.6.2",
     "angular-route": "^1.6.8",
     "jquery": "^3.3.1"

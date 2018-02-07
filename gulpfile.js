@@ -1,5 +1,5 @@
 /**
- * There is 2 mode, dev and build
+ * There are 2 modes, dev and build
  * 
  * Mode 1: dev, workflow is as follow:
  * 1. Start livereload server.
@@ -120,7 +120,7 @@ gulp.task('minify:js', function () {
       console.log(err)
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('dist/src/js'))
 })
 
 gulp.task('minify:css', function () {
@@ -130,7 +130,7 @@ gulp.task('minify:css', function () {
     .pipe(concat('main.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS({ compability: 'ie8' }))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/src/css'))
 })
 
 gulp.task('minify:img', function () {

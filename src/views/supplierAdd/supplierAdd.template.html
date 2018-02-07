@@ -1,7 +1,13 @@
 This is supplier add page
 <form ng-submit="vm.addSupplier()">
     <input ng-model="vm.name" type="text" placeholder="Name" required>
-    <input ng-model="vm.address" type="text" placeholder="Address" required>
-    <input ng-model="vm.company" type="text" placeholder="Company" required>
+    <input ng-model="vm.username" type="text" placeholder="Username" required>
+    <input ng-model="vm.email" type="email" placeholder="Email" required>
+    <input ng-model="vm.password" type="password" placeholder="Password" required>
+    <input ng-model="vm.phone" type="number" placeholder="Phone Number" required>
+    <input ng-model="vm.company_address" type="text" placeholder="Address" required>
+    <input ng-model="vm.company_profile" type="text" placeholder="Company" required>
+    <input class="image-uploader" ng-click="vm.encodeImg($event)" ng-model="vm.photo" type="file" placeholder="Photo">
+    <img src="" width="400" alt="Photo Preview">
     <input type="submit" value="Add Supplier">
 </form>

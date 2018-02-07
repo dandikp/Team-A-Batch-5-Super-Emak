@@ -2,28 +2,43 @@ This is supplier page
 <a ui-sref="supplierAdd">
   <button>Add Supplier</button>
 </a>
-<table datatable="ng" class="row-border hover">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Company</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="supplier in vm.supplier">
-      <td>{{ $index }}</td>
-      <td>{{ supplier.name }}</td>
-      <td>{{ supplier.address }}</td>
-      <td>{{ supplier.company }}</td>
-      <td>
-        <a ui-sref="supplierEdit({id: $index})">
-          <button>Edit</button>
-        </a>
-        <button ng-click="vm.deleteSupplier($index)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div ng-if="vm.dataFetched">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Company Address</th>
+        <th>Company Profile</th>
+        <th>Photo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="supplier in vm.supplier">
+        <td>{{ supplier.name }}</td>
+        <td>{{ supplier.username }}</td>
+        <td>{{ supplier.email }}</td>
+        <td>{{ supplier.phone }}</td>
+        <td>{{ supplier.company_address }}</td>
+        <td>{{ supplier.company_profile }}</td>
+        <td>
+          <img ng-src="{{supplier.photo}}" alt="Profile photo">
+        </td>
+        <td>
+          <a ui-sref="supplierEdit({id: supplier.id})">
+            <button>Edit</button>
+          </a>
+          <button ng-click="vm.deleteSupplier(supplier.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button ng-click="vm.getSupplierPerPage(vm.currentPage - 1)"> Previous </button>
+  <button ng-repeat="i in vm.totalPage track by $index"
+          ng-click="vm.getSupplierPerPage($index + 1)">{{ $index + 1 }}</button>
+  <button ng-click="vm.getSupplierPerPage(vm.currentPage + 1)"> Next </button>
+</div>
+<div ng-if="!vm.dataFetched">Fetching data...</div>

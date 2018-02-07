@@ -8,40 +8,12 @@
   function service($window, $http) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/suppliers'
+    var headers = {
+      'Access-Control-Allow-Origin': '*'
+    }
 
-    service.supplier = [
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Amikom'
-      },
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Binar'
-      },
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Amikom'
-      },
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Binar'
-      },
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Amikom'
-      },
-      {
-        'name': 'Irham',
-        'address': 'Imogiri Barat km.4',
-        'company': 'Binar'
-      }
-    ]
-    service.getAllSupplier = getAllSupplier
+    service.supplier = []
+    service.getSupplierPerPage = getSupplierPerPage
     service.getSupplierById = getSupplierById
     service.addSupplier = addSupplier
     service.editSupplier = editSupplier
@@ -49,39 +21,99 @@
 
     return service
 
-    function getAllSupplier() {
+    function getSupplierPerPage(page, dataPerPage, onSuccess, onError) {
       $http({
         method: 'GET',
+        url: baseUrl + '?page=' + page + '&limit=' + dataPerPage,
+        headers: headers,
+        data: ''
+      })
+        .then(function (response) {
+          onSuccess(response.data)
+          console.log(response)
+
+        }, function (response) {
+          onError(response.statusText)
+
+        })
+    }
+
+    function getSupplierById(id, onSuccess, onError) {
+      $http({
+        method: 'GET',
+        url: baseUrl + '/' + id,
+        headers: headers,
+        data: ''
+      })
+        .then(function (response) {
+          onSuccess(response.data.data)
+
+        }, function (response) {
+          onError(response.statusText)
+
+        })
+    }
+
+    function addSupplier(payload, onSuccess, onError) { // payload = supplier object without Id
+      $http({
+        method: 'POST',
         url: baseUrl,
-        header: {
-          'Access-Control-Allow-Origin': '*'
+        headers: headers,
+        data: {
+          name: payload.name,
+          username: payload.username,
+          email: payload.email,
+          password: payload.password,
+          phone: payload.phone,
+          company_address: payload.company_address,
+          company_profile: payload.company_profile,
+          photo: payload.photo
         }
       })
-      .then((response)=> {
-        service.supplier = response.data
-      }, ()=> {
-        $window.alert(response.statusText)
+        .then(function (response) {
+          onSuccess(response.statusText)
+        }, function (response) {
+          onError(response.statusText)
       })
-      
-      return service.supplier
-    }
-
-    function getSupplierById(id) {
-      return service.supplier[id]
-    }
-
-    function addSupplier(payload) { // payload = supplier object without Id
-      service.supplier.push(payload)
     }
 
     function editSupplier(id, payload) { // payload = supplier object without Id
-
-      service.supplier.splice(id, 1, payload)
+      $http({
+        method: 'PUT',
+        url: baseUrl,
+        headers: headers,
+        data: {
+          'id': id,
+          'name': payload.name,
+          'username': payload.username,
+          'email': payload.email,
+          'password': payload.password,
+          'phone': payload.phone,
+          'company_address': payload.company_address,
+          'company_profile': payload.company_profile,
+          'photo': payload.photo
+        }
+      })
+        .then(function (response) {
+          onSuccess(response.statusText)
+        }, function (response) {
+          onError(response.statusText)
+        })
     }
 
-    function deleteSupplier(id) {
+    function deleteSupplier(id, onSuccess, onError) {
+      $http({
+        method: 'DELETE',
+        url: baseUrl + '/' + id,
+        headers: headers
+      })
+        .then(function (response) {
+          onSuccess(response.statusText)
 
-      service.supplier.splice(id, 1)
+        }, function (response) {
+          onError(response.statusText)
+
+        })
     }
   }
 })();
