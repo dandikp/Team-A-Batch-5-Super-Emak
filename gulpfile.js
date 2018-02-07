@@ -1,6 +1,7 @@
 var gulp = require('gulp')
 var config =  require('./gulpfile.config')
 var devConfig = config.dev
+var buildConfig = config.build
 var inject = require('gulp-inject')
 var concat = require('gulp-concat')
 var rename = require('gulp-rename')
@@ -8,6 +9,12 @@ var sass = require('gulp-ruby-sass')
 var postcss = require('gulp-postcss')
 var autoprefixer = require('autoprefixer')
 var runSequence = require('run-sequence')
+var sourcemaps = require('gulp-sourcemaps')
+var uglify = require('gulp-uglify')
+var cleanCSS = require('gulp-clean-css')
+var imagemin = require('gulp-imagemin')
+var cache = require('gulp-cache')
+
 
 /** DEV MODE */
 
@@ -52,4 +59,46 @@ gulp.task('watch', function() {
   gulp.watch('./src/**/*.scss', ['inject-css'])
   gulp.watch('./src/**/*.js', ['inject-js'])
   gulp.watch('./src/**/*.html', ['watch-html'])
+})
+
+/** BUILD MODE */
+
+gulp.task('build', [
+  'handle-html',
+  'minify-js',
+  'minify-css',
+  'minify-img'
+])
+
+gulp.task('minify-js', function() {
+  return gulp.src(buildConfig.js)
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify().on('error', function (err) {
+      console.log(err)
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/js'))
+})
+
+gulp.task('minify-css', function () {
+  return gulp.src(buildConfig.css)
+    .pipe(sourcemaps.init())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(concat('main.css'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(cleanCSS({ compability: 'ie8' }))
+    .pipe(gulp.dest('dist/css'))
+})
+
+gulp.task('minify-img', function () {
+  return gulp.src(buildConfig.img)
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('dist/src/img'))
+})
+
+gulp.task('handle-html', function () {
+  return gulp.src(buildConfig.html)
+    .pipe(gulp.dest('dist/src'))
 })

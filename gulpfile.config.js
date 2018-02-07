@@ -15,5 +15,21 @@ module.exports = {
             './src/**/*.service.js',
             './src/assets/**/*.js'
         ]
+    },
+    build: {
+        js: [
+            './src/**/*.module.js',
+            './src/**/*.routes.js',
+            './src/**/*.controller.js',
+            './src/**/*.component.js',
+            './src/**/*.service.js',
+            './src/assets/**/*.js'
+        ],
+        css: [
+            './node_modules/font-awesome/css/font-awesome.css',
+            './src/assets/css/**/*.css'
+        ], 
+        img: './src/assets/img/*',
+        html: './src/**/*.html'
     }
 }
