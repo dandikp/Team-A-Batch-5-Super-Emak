@@ -35,9 +35,10 @@ a {
     &__wrapper {
         margin: 56px 0 0 240px;
         padding: 12px 0;
-        position: fixed;
+        position: relative;
         width: calc(100% - 240px);
         min-height: calc(100% - 56px);
+        overflow-y: auto;
         background-color: transparent;
 
         @media screen and (max-width: 960px) {
