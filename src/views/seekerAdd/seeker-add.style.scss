@@ -1,6 +1,29 @@
 .seeker-add {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 12px 0;
+    background-color: transparent;
 
     &__wrapper {
-        
+        height: 100%;
+        width: 100%;
+        margin-top: 18px;
+        background-color: transparent;
+    }
+
+    &__content-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 100px;
+        margin: 12px 8px;
+        margin-bottom: 24px;
+        padding: 22px 21px;
+        box-shadow: 0 2px 2px 0 rgba(40, 40, 40, .14), 0 1px 5px 0 rgba(40, 40, 40, .12), 0 3px 1px -2px rgba(40, 40, 40, .2);
     }
 }
