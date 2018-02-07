@@ -2,5 +2,3 @@ node_modules
 index.html
 .sass-cache
 dist
-.gitlab-ci.yml
-.gitignore
