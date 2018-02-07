@@ -63,12 +63,9 @@ gulp.task('watch', function() {
 
 /** BUILD MODE */
 
-gulp.task('build', [
-  'handle-html',
-  'minify-js',
-  'minify-css',
-  'minify-img'
-])
+gulp.task('build', function(callback) {
+  runSequence('handle-html', 'minify-js', 'minify-css', 'minify-img', callback)
+})
 
 gulp.task('minify-js', function() {
   return gulp.src(buildConfig.js)
