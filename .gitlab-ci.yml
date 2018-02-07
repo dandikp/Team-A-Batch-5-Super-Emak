@@ -1,6 +1,8 @@
 image: 'node:carbon'
 
 before_script:
+  - 'apt-add-repository ppa:brightbox/ruby-ng'
+  - 'apt-get update'
   - 'apt-get install ruby ruby-dev'
   - 'npm set progress=false'
   - 'npm install --silent'
