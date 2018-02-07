@@ -18,6 +18,10 @@
                 url: '/supplier',
                 component: 'supplier'
             })
+            .state('seekerAdd', {
+                url: '/seeker/add',
+                component: 'seekerAdd'
+            })
             .state('categories', {
                 url: '/categories',
                 component: 'categories'
