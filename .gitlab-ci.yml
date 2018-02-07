@@ -1,4 +1,4 @@
-﻿image: 'node:carbon'
+image: 'node:carbon'
 
 before_script:
   - 'apt install ruby ruby-dev'
