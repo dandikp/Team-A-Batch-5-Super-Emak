@@ -1,6 +1,8 @@
 ﻿image: 'node:carbon'
 
 before_script:
+  - 'apt install ruby'
+  - 'apt install ruby-gem'
   - 'npm set progress=false'
   - 'npm install --silent'
   
