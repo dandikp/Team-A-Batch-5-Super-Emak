@@ -5,10 +5,10 @@
             <div class="seeker">
                 <div class="seeker__content-wrapper">
                     <div class="seeker__table-header">
-                        <a ui-sref="seekerAdd" class="seeker__button seeker__button--success"><span class="seeker__button-icon"><i class="fa fa-plus"></i></span> Add</a>
+                        <a ui-sref="seekerAdd" class="seeker__button seeker__button--padding-md seeker__button--margin-y-lg seeker__button--success" title="Add Seeker"><span class="seeker__button-icon seeker__button-icon--margin-sm"><i class="fa fa-plus"></i></span> Add</a>
                         <div class="seeker__table-filter">
                             <input type="text" class="seeker__input" placeholder="Search Here">
-                            <a class="seeker__button"><span class="seeker__button-icon"><i class="fa fa-filter"></i></span></a>
+                            <a class="seeker__button seeker__button--no-padding seeker__button--margin-y-lg"><span class="seeker__button-icon"><i class="fa fa-filter"></i></span></a>
                         </div>
                     </div>
                     <div class="seeker__table-wrapper">
@@ -17,16 +17,25 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
                                     <th>Address</th>
-                                    <th>Action</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Nama</td>
                                     <td>User</td>
-                                    <td>Alamat</td>
-                                    <td></td>
+                                    <td>email@email.com</td>
+                                    <td>+622939012367</td>
+                                    <td>Alamat ..... </td>
+                                    <td>
+                                        <div class="seeker__action-group">
+                                            <a ui-sref="seekerEdit" class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Update Seeker"><span class="seeker__button-icon"><i class="fa fa-edit"></i></span></a>
+                                            <a class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Deactivate Seeker"><span class="seeker__button-icon"><i class="fa fa-times"></i></span></a>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

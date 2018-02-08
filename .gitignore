@@ -1,4 +1,22 @@
-node_modules
+# INDEX #
+#########
 index.html
+
+# GULP #
+########
+gulpfile.js
+gulpfile.config.js
+
+# SASS #
+########
 .sass-cache
+.sass-cache/*
+*.map
+
+# NODE MODULES #
+################
+node_modules
+
+# DIST DIRECTORY #
+##################
 dist

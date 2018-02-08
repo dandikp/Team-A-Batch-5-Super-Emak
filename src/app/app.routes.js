@@ -22,6 +22,10 @@
                 url: '/seeker/add',
                 component: 'seekerAdd'
             })
+            .state('seekerEdit', {
+                url: '/seeker/edit',
+                component: 'seekerEdit'
+            })
             .state('categories', {
                 url: '/categories',
                 component: 'categories'
