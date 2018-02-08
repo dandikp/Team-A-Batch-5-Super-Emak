@@ -1,5 +1,4 @@
-.sass-cache
 node_modules
 index.html
-gulpfile.js
-gulpfile.config.js
+.sass-cache
+dist
