@@ -1,10 +1,8 @@
 image: 'node:carbon'
 
 before_script:
-  - 'apt-get install software-properties-common'
-  - 'apt-add-repository ppa:brightbox/ruby-ng'
-  - 'apt-get update'
-  - 'apt-get install ruby'
+  - 'apt-get update -yq'
+  - 'apt-get install -y ruby ruby-dev rubygems-integration'
   - 'npm set progress=false'
   - 'npm install --silent'
   
@@ -12,16 +10,16 @@ stages:
   - build
   - clean_up
   
-build:
+build_and_deploy_prod:
   stage: build
   script:
     - 'npm run build'
     - 'gem install dpl'
-    - 'dpl --provider=heroku --app=binar-fe-batch-5 --api key=c04b3ed2-7e04-48ad-86b5-50708c8e1353'
+    - 'dpl --provider=heroku --app=binar-fe-batch-5 --api-key=c04b3ed2-7e04-48ad-86b5-50708c8e1353'
   only:
     - cms-dev
     
-clean:
+clean_up_job:
   stage: clean_up
   script:
     - 'rm -rf node_modules'
