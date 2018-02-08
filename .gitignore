@@ -1,6 +1,8 @@
 node_modules
 index.html
-.sass-cache
-dist
-.gitlab-ci.yml
-.gitignore
+
+# SASS #
+##########
+**/.sass-cache
+**/.sass-cache/*
+**/*.map
