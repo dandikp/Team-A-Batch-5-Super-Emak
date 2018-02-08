@@ -8,7 +8,7 @@ gulpfile.js
 gulpfile.config.js
 
 # SASS #
-##########
+########
 .sass-cache
 .sass-cache/*
 *.map
