@@ -1,10 +1,10 @@
 image: 'node:carbon'
 
 before_script:
-  - 'apt-get install software-properties-common python-software-properties'
+  - 'apt-get install software-properties-common'
   - 'apt-add-repository ppa:brightbox/ruby-ng'
   - 'apt-get update'
-  - 'apt-get install ruby ruby-dev'
+  - 'apt-get install ruby'
   - 'npm set progress=false'
   - 'npm install --silent'
   
