@@ -1,12 +1,26 @@
-[
-    {
-        "userId": 1,
-        "username": "mppruah",
-        "password": "123",
-        "name": "Siti Marfuw'ah",
-        "foto": "gravatar", 
-        "email": "sitmarfuah@yahoo.com",
-        "phone": "+62893416901311",
-        "address": "Kampong Durian Runtoh",
-    }
-]
+{
+    "data": [
+      {
+        "id": 1,
+        "username": null,
+        "photo": null,
+        "name": null,
+        "phone": null,
+        "address": null,
+        "email": "com@com.com"
+      },
+      {
+        "id": 2,
+        "username": null,
+        "photo": null,
+        "name": null,
+        "phone": null,
+        "address": null,
+        "email": "bros@gud.com"
+      }
+    ],
+    "current_page": 1,
+    "total_emak": 2,
+    "limit_page": 10,
+    "total_page": 1
+  }
