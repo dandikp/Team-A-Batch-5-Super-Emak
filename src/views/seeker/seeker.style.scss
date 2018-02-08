@@ -109,6 +109,13 @@
             border: 1px solid #00e676;
             color: #ffffff;
         }
+
+        &--danger {
+            box-shadow: unset;
+            background-color: #ff8a80;
+            border: 1px solid #ff5252;
+            color: #ffffff;
+        }
     }
 
     &__button-icon {
