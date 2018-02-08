@@ -11,4 +11,11 @@
     "supplierId": "",
     "applicantIds": "list mamaId applying the job",
     "workerId": "mamaId working on job"
+},
+{
+    "data": [],
+    "current_page": 1,
+    "limit_page": 10,
+    "total_page": 0,
+    "total_jobs": 0
 }
