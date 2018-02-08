@@ -1,4 +1,4 @@
-.supplier-add {
+.supplier-edit {
   height: 100%;
   width: 100%;
   position: relative;
@@ -13,12 +13,12 @@
       flex-wrap: nowrap;
   padding: 12px 0;
   background-color: transparent; }
-  .supplier-add__wrapper {
+  .supplier-edit__wrapper {
     height: 100%;
     width: 100%;
     margin-top: 18px;
     background-color: transparent; }
-  .supplier-add__content-wrapper {
+  .supplier-edit__content-wrapper {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -36,12 +36,12 @@
     padding: 22px 21px;
     -webkit-box-shadow: 0 2px 2px 0 rgba(40, 40, 40, 0.14), 0 1px 5px 0 rgba(40, 40, 40, 0.12), 0 3px 1px -2px rgba(40, 40, 40, 0.2);
             box-shadow: 0 2px 2px 0 rgba(40, 40, 40, 0.14), 0 1px 5px 0 rgba(40, 40, 40, 0.12), 0 3px 1px -2px rgba(40, 40, 40, 0.2); }
-  .supplier-add__content-title {
+  .supplier-edit__content-title {
     position: relative;
     display: block;
     font-weight: 400;
     margin-bottom: 24px; }
-  .supplier-add__content {
+  .supplier-edit__content {
     width: 100%;
     position: relative;
     display: -webkit-box;
@@ -53,7 +53,7 @@
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-  .supplier-add__form {
+  .supplier-edit__form {
     width: 100%;
     position: relative;
     display: -webkit-box;
@@ -65,7 +65,7 @@
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-  .supplier-add__input-group {
+  .supplier-edit__input-group {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -80,15 +80,15 @@
     width: 45%;
     margin: 2px 5% 15px 0; }
     @media screen and (max-width: 600px) {
-      .supplier-add__input-group {
+      .supplier-edit__input-group {
         width: 100%;
         margin-right: 0; } }
-  .supplier-add__input-label {
+  .supplier-edit__input-label {
     font-weight: 700;
     font-size: .875rem;
     margin-right: 10px;
     margin-bottom: 7px; }
-  .supplier-add__input {
+  .supplier-edit__input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -96,11 +96,11 @@
     border: 1.5px solid rgba(40, 40, 40, 0.2);
     min-height: 30px;
     padding: 2px 10px; }
-  .supplier-add input,
-  .supplier-add textarea {
+  .supplier-edit input,
+  .supplier-edit textarea {
     font-family: Helvetica, Arial, sans-serif;
     font-size: .9rem; }
-  .supplier-add__button-group {
+  .supplier-edit__button-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -112,7 +112,7 @@
     -ms-flex-line-pack: center;
         align-content: center;
     padding: 12px 0; }
-  .supplier-add__button {
+  .supplier-edit__button {
     position: relative;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -131,53 +131,53 @@
     /* Padding Modifier */
     /* Margin Modifier */
     /* Color Modifier */ }
-    .supplier-add__button--no-padding {
+    .supplier-edit__button--no-padding {
       padding: 2px; }
-    .supplier-add__button--padding-xs {
+    .supplier-edit__button--padding-xs {
       padding: 2px 6px; }
-    .supplier-add__button--padding-sm {
+    .supplier-edit__button--padding-sm {
       padding: 2px 10px; }
-    .supplier-add__button--padding-md {
+    .supplier-edit__button--padding-md {
       padding: 2px 16px; }
-    .supplier-add__button--padding-lg {
+    .supplier-edit__button--padding-lg {
       padding: 2px 24px; }
-    .supplier-add__button--margin-y-xs {
+    .supplier-edit__button--margin-y-xs {
       margin-top: 2px;
       margin-bottom: 3px; }
-    .supplier-add__button--margin-y-sm {
+    .supplier-edit__button--margin-y-sm {
       margin-top: 2px;
       margin-bottom: 5px; }
-    .supplier-add__button--margin-y-md {
+    .supplier-edit__button--margin-y-md {
       margin-top: 2px;
       margin-bottom: 7px; }
-    .supplier-add__button--margin-y-lg {
+    .supplier-edit__button--margin-y-lg {
       margin-top: 2px;
       margin-bottom: 9px; }
-    .supplier-add__button--margin-x-xs {
+    .supplier-edit__button--margin-x-xs {
       margin-right: 2px;
       margin-left: 3px; }
-    .supplier-add__button--margin-x-sm {
+    .supplier-edit__button--margin-x-sm {
       margin-right: 3px;
       margin-left: 5px; }
-    .supplier-add__button--margin-x-md {
+    .supplier-edit__button--margin-x-md {
       margin-right: 5px;
       margin-left: 7px; }
-    .supplier-add__button--margin-x-lg {
+    .supplier-edit__button--margin-x-lg {
       margin-right: 6px;
       margin-left: 9px; }
-    .supplier-add__button--success {
+    .supplier-edit__button--success {
       -webkit-box-shadow: unset;
               box-shadow: unset;
       background-color: #69f0ae;
       border: 1px solid #00e676;
       color: #ffffff; }
-    .supplier-add__button--danger {
+    .supplier-edit__button--danger {
       -webkit-box-shadow: unset;
               box-shadow: unset;
       background-color: #ff8a80;
       border: 1px solid #ff5252;
       color: #ffffff; }
-  .supplier-add__button-icon {
+  .supplier-edit__button-icon {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -193,9 +193,9 @@
     border: none;
     font-weight: 400;
     /* Margin Modifier */ }
-    .supplier-add__button-icon--margin-sm {
+    .supplier-edit__button-icon--margin-sm {
       margin-right: 5px; }
-    .supplier-add__button-icon--margin-md {
+    .supplier-edit__button-icon--margin-md {
       margin-right: 9px; }
-    .supplier-add__button-icon--margin-lg {
+    .supplier-edit__button-icon--margin-lg {
       margin-right: 14px; }

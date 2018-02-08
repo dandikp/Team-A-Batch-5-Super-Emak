@@ -14,10 +14,6 @@
                 url: '/seeker',
                 component: 'seeker'
             })
-            .state('supplier', {
-                url: '/supplier',
-                component: 'supplier'
-            })
             .state('seekerAdd', {
                 url: '/seeker/add',
                 component: 'seekerAdd'
@@ -25,6 +21,18 @@
             .state('seekerEdit', {
                 url: '/seeker/edit',
                 component: 'seekerEdit'
+            })
+            .state('supplier', {
+                url: '/supplier',
+                component: 'supplier'
+            })
+            .state('supplierAdd', {
+                url: '/supplier/add',
+                component: 'supplierAdd'
+            })
+            .state('supplierEdit', {
+                url: '/supplier/edit',
+                component: 'supplierEdit'
             })
             .state('jobs', {
                 url: '/jobs',

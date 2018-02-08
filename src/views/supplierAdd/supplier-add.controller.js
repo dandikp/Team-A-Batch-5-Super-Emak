@@ -1,8 +1,8 @@
 (function() {
     angular.module('app')
-        .controller('SeekerAddController', SeekerAddController)
-    
-    SeekerAddController.$inject = []
+        .controller('SupplierAddController', SupplierAddController)
+        
+    SupplierAddController.$inject = []
 
-    function SeekerAddController() { }
+    function SupplierAddController() { }
 })()
