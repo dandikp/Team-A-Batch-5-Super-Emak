@@ -26,10 +26,6 @@
                 url: '/seeker/edit',
                 component: 'seekerEdit'
             })
-            .state('categories', {
-                url: '/categories',
-                component: 'categories'
-            })
             .state('jobs', {
                 url: '/jobs',
                 component: 'jobs'
