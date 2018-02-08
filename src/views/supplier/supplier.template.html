@@ -1,0 +1,49 @@
+<div class="main__wrapper">
+    <div class="main">
+        <h2 class="main__title">Supplier</h2>
+        <div class="supplier__wrapper">
+            <div class="seeker">
+                <div class="supplier__content-wrapper">
+                    <div class="supplier__table-header">
+                        <a ui-sref="supplierAdd" class="supplier__button supplier__button--padding-md supplier__button--margin-y-lg supplier__button--success" title="Add Seeker"><span class="supplier__button-icon supplier__button-icon--margin-sm"><i class="fa fa-plus"></i></span> Add</a>
+                        <div class="supplier__table-filter">
+                            <input type="text" class="supplier__input" placeholder="Search Here">
+                            <a class="supplier__button supplier__button--no-padding supplier__button--margin-y-lg"><span class="supplier__button-icon"><i class="fa fa-filter"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="supplier__table-wrapper">
+                        <table class="supplier__table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Company Profile</th>
+                                    <th>Company Address</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>User</td>
+                                    <td>email@email.com</td>
+                                    <td>+622939012367</td>
+                                    <td>CV. Apa Saja adalah ....</td>
+                                    <td>Alamat ..... </td>
+                                    <td>
+                                        <div class="supplier__action-group">
+                                            <a ui-sref="supplierEdit" class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Update Seeker"><span class="supplier__button-icon"><i class="fa fa-edit"></i></span></a>
+                                            <a class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Deactivate Seeker"><span class="supplier__button-icon"><i class="fa fa-times"></i></span></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
