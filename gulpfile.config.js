@@ -21,10 +21,10 @@ module.exports = {
     },
     build: {
         css: [
-            './src/assets/css/main.min.css'
+            './dist/src/assets/css/main.min.css'
         ],
         js: [
-            './src/**/main.min.js'
+            './dist/src/**/main.min.js'
         ],
         img: './dist/src/assets/img/*',
         views: './dist/src/**/*.html'

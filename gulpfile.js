@@ -108,11 +108,8 @@ gulp.task('handle-views', function () {
 
 gulp.task('build-index', function() {
   return gulp.src('./index.template.html')
-    .pipe(inject(gulp.src(buildConfig.css.concat(buildConfig.js), {
-      read: false
-    })))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('./dist'))
 
   console.log([buildConfig.css].concat([buildConfig.js]))
 })
