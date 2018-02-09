@@ -5,4 +5,4 @@
             controller: "SeekerController",
             controllerAs: "vm"
         })
-})()
+})();

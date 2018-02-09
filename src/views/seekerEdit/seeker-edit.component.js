@@ -5,4 +5,4 @@
             controller: 'SeekerEditController',
             controllerAs: 'vm'
         })
-})()
+})();

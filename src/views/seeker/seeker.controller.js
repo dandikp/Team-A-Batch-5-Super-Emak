@@ -5,4 +5,4 @@
     SeekerController.$inject = []
 
     function SeekerController() { }
-})()
+})();

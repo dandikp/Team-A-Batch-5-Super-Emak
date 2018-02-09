@@ -5,4 +5,4 @@
     JobsController.$inject = []
 
     function JobsController() { }
-})()
+})();

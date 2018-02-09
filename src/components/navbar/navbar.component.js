@@ -5,4 +5,4 @@
             controller: 'NavbarController',
             controllerAs: 'vm'
         })
-})()
+})();

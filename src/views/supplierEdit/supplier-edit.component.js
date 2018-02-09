@@ -5,4 +5,4 @@
             controller: 'SupplierEditController',
             controllerAs: 'vm'
         })
-})()
+})();

@@ -6,21 +6,27 @@ module.exports = {
             './src/assets/css/**/*.css'
         ],
         js: [
-            './node_modules/angular/angular.min.js',
+            './node_modules/angular/angular.js',
             './node_modules/@uirouter/angularjs/release/angular-ui-router.js',
             './src/**/*.module.js',
             './src/**/*.routes.js',
             './src/**/*.service.js',
             './src/**/*.controller.js',
-            './src/**/*.component.js',
-            './src/assets/**/*.js'
+            './src/**/*.component.js'
         ],
-        fonts: './node_modules/font-awesome/fonts/*'
+        views: './src/**/*.html',
+        fonts: './node_modules/font-awesome/fonts/*',
+        img: './src/assets/img/*',
+        index: './index.template.html'
     },
     build: {
-        css: './src/css/**/*.css',
-        js: './src/js/**/*.js',
-        img: '.src/img/*',
-        views: './src/**/*.html'
+        css: [
+            './dist/src/**/*.css'
+        ],
+        js: [
+            './dist/src/**/*.js'
+        ],
+        img: './dist/src/assets/img/*',
+        views: './dist/src/**/*.html'
     }
 }

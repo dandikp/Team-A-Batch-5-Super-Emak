@@ -43,4 +43,4 @@
             .when('/', 'dashboard')
             .when('', 'dashboard')
     }
-})()
+})();
