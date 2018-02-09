@@ -1,0 +1,68 @@
+{
+    "data": [
+      {
+        "id": 16,
+        "name": "asdasd",
+        "phone": "123123123",
+        "photo": {
+          "url": "/uploads/supplier/photo/16/msakdmasd"
+        },
+        "username": "asdasd",
+        "company_profile": "askasdjas",
+        "company_address": "asdadasnayumi",
+        "email": null
+      },
+      {
+        "id": 18,
+        "name": "samantha",
+        "phone": "123213123",
+        "photo": {
+          "url": "/uploads/supplier/photo/18/2312asdasd"
+        },
+        "username": "asdasd213213213",
+        "company_profile": "asdasdmx",
+        "company_address": "asdkadask",
+        "email": null
+      },
+      {
+        "id": 20,
+        "name": "eunnnnnnnn",
+        "phone": "1219823989",
+        "photo": {
+          "url": "/uploads/supplier/photo/20/29832823"
+        },
+        "username": "asdasdasd",
+        "company_profile": "29381283",
+        "company_address": "qweiqwuewiq",
+        "email": null
+      },
+      {
+        "id": 21,
+        "name": "fizi",
+        "phone": null,
+        "photo": {
+          "url": "/uploads/supplier/photo/21/photo.png"
+        },
+        "username": "kurniawan",
+        "company_profile": null,
+        "company_address": null,
+        "email": null
+      },
+      {
+        "id": 22,
+        "name": null,
+        "phone": null,
+        "photo": {
+          "url": null
+        },
+        "username": null,
+        "company_profile": null,
+        "company_address": null,
+        "email": "yani@aa.com"
+      }
+    ],
+    "current_page": 1,
+    "limit_page": 10,
+    "total_page": 1,
+    "total_supplier": 5
+}

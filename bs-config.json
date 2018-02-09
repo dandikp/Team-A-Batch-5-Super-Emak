@@ -1,0 +1,24 @@
+{
+    "port": 4200,
+    "server": {
+        "baseDir": "."
+    },
+    "ui": false,
+    "watchOptions": {
+        "ignoreInitial": true,
+        "ignored": [
+            "./gulpfile.js",
+            "./gulpfile.config.js",
+            "./index.template.html",
+            "./package.json",
+            "./.gitignore",
+            "./README.md"
+        ]
+    },
+    "files": [
+        "./index.html",
+        "./src/**/*.js",
+        "./src/**/*.css",
+        "./src/**/*.html"
+    ]
+}

@@ -1,23 +1,18 @@
 {
-  "name": "angularjs-boilerplate",
-  "version": "1.0.0",
-  "description": "angularjs simple boilerplate using gulp",
+  "name": "CMS-Admin",
+  "version": "0.0.0",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "none"
-  },
-  "keywords": [
-    "angularjs",
-    "gulp",
-    "boilerplate"
-  ],
-  "author": "irhamhqm@gmail.com",
+  "repository": "git@gitlab.com:Binar/Batch5-TeamA-Frontend.git",
+  "author": "Dandi Pratama <dandi.karunia@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.14",
+    "angular": "^1.6.8",
+    "angular-base64-upload": "^0.1.23",
+    "font-awesome": "^4.7.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "gulp": "^3.9.1",
@@ -26,21 +21,17 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-inject": "^4.3.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.3",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^5.0.0"
+    "gulp-watch": "^5.0.0",
+    "lite-server": "^2.3.0",
+    "run-sequence": "^2.2.1"
   },
-  "dependencies": {
-    "@uirouter/angularjs": "^1.0.7",
-    "angular": "^1.6.8",
-    "angular-base64-upload": "^0.1.23",
-    "angular-datatables": "^0.6.2",
-    "angular-route": "^1.6.8",
-    "jquery": "^3.3.1"
+  "scripts": {
+    "dev": "lite-server -c bs-config.json",
+    "build": "gulp build",
+    "gulp-dev": "gulp dev"
   }
 }

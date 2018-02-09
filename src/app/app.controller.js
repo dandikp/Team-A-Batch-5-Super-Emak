@@ -1,9 +1,8 @@
-(function () {
-  angular
-    .module('app')
-    .controller('appCtrl', controller)
+(function() {
+    angular.module('app')
+        .controller('AppController', AppController)
 
-  function controller() {
+    AppController.$inject = []
 
-  }
-})();
+    function AppController() { }
+})()

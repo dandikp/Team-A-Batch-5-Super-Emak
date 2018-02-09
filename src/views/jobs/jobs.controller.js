@@ -1,9 +1,8 @@
 (function() {
-  angular
-    .module('app')
-    .controller('jobsCtrl', controller)
-
-  function controller() {
+    angular.module('app')
+        .controller('JobsController', JobsController)
     
-  }
-})();
+    JobsController.$inject = []
+
+    function JobsController() { }
+})()
