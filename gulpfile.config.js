@@ -10,9 +10,9 @@ module.exports = {
             './node_modules/@uirouter/angularjs/release/angular-ui-router.js',
             './src/**/*.module.js',
             './src/**/*.routes.js',
+            './src/**/*.service.js',
             './src/**/*.controller.js',
             './src/**/*.component.js',
-            './src/**/*.service.js',
             './src/assets/**/*.js'
         ]
     },
