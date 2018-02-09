@@ -18,7 +18,6 @@ build_and_deploy_prod:
     - 'npm run build'
     - 'gem install dpl'
     - 'dpl --provider=heroku --app=binar-fe-batch-5 --api-key=c04b3ed2-7e04-48ad-86b5-50708c8e1353'
-    - 'npm run serve'
   only:
     - cms-dev
     
