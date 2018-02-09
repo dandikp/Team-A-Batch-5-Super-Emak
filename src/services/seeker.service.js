@@ -11,8 +11,10 @@
             'Access-Control-Allow-Origin': '*'
         }
 
-        service.seekers = []
-        service.getSeekersPerPage = getSeekersPerPage        
+        service.seeker = []
+        service.getSeekersPerPage = getSeekersPerPage    
+        
+        return service
 
         function getSeekersPerPage(page, limitDataPerPage, onSuccess, onError) {
             $http({
@@ -22,11 +24,10 @@
                 data: ''
             })
                 .then(function(response) {
-                    onSuccess()
+                    onSuccess(response.data)
                     console.log(response)
                 }, function(response) {
-                    onError()
-                    console.log(response)
+                    onError(response.statusText)
                 })
         }
     }
