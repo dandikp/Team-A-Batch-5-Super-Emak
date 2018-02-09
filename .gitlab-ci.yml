@@ -4,6 +4,7 @@ before_script:
   - 'apt-get update -yq'
   - 'apt-get install -y ruby ruby-dev rubygems-integration'
   - 'gem install sass'
+  - 'npm install -g nodemon'
   - 'npm set progress=false'
   - 'npm install --silent'
   
@@ -15,7 +16,6 @@ build_and_deploy_prod:
   stage: build
   script:
     - 'npm run build'
-    - 'npm install -g nodemon'
     - 'gem install dpl'
     - 'dpl --provider=heroku --app=binar-fe-batch-5 --api-key=c04b3ed2-7e04-48ad-86b5-50708c8e1353'
     - 'npm run serve'
