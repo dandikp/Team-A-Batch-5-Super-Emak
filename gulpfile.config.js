@@ -21,7 +21,7 @@ module.exports = {
     },
     build: {
         css: [
-            '.src/assets/css/main.min.css'
+            './src/assets/css/main.min.css'
         ],
         js: [
             './src/**/main.min.js'
