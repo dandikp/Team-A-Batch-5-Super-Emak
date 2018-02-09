@@ -107,7 +107,7 @@ gulp.task('handle-views', function () {
 })
 
 gulp.task('build-index', function() {
-  return gulp.src('./index.template.html')
+  return gulp.src('./build.template.html')
     .pipe(rename('index.html'))
     .pipe(gulp.dest('./dist'))
 
