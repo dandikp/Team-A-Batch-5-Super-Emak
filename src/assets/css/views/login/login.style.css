@@ -1,0 +1,26 @@
+.login {
+  position: relative;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 400px; }
+  .login__title {
+    font-size: 22px;
+    text-align: center; }
+  .login__subtitle {
+    font-size: 18px;
+    text-align: center; }
+  .login__input-group {
+    padding: 5px 0; }
+  .login__input-field {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80%; }
+  .login__button {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }

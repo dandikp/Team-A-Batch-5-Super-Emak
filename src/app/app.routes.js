@@ -6,6 +6,10 @@
 
     function routerConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
+            .state('login', {
+                url: '/login',
+                component: 'login'
+            })
             .state('dashboard', {
                 url: '/dashboard',
                 component: 'dashboard'
@@ -19,7 +23,7 @@
                 component: 'seekerAdd'
             })
             .state('seekerEdit', {
-                url: '/seeker/edit',
+                url: '/seeker/edit/:id',
                 component: 'seekerEdit'
             })
             .state('supplier', {
@@ -31,7 +35,7 @@
                 component: 'supplierAdd'
             })
             .state('supplierEdit', {
-                url: '/supplier/edit',
+                url: '/supplier/edit/:id',
                 component: 'supplierEdit'
             })
             .state('jobs', {
@@ -42,5 +46,6 @@
         $urlRouterProvider
             .when('/', 'dashboard')
             .when('', 'dashboard')
+        
     }
 })()

@@ -1,7 +1,7 @@
 (function () {
   angular
     .module('app')
-    .controller('supplierCtrl', controller)
+    .controller('supplierController', controller)
 
   function controller(supplierService, $stateParams, $window) {
     var vm = this
@@ -41,8 +41,9 @@
       vm.dataFetched = false
       supplierService.deleteSupplier(index, function (resp) {
         $window.alert(resp)
-        vm.dataFetched = true
+        supplier.getSupplierPerPage(1)
 
+        vm.dataFetched = true
       }, function (resp) {
         $window.alert(resp)
 

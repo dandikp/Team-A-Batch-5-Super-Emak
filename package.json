@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "repository": "git@gitlab.com:Binar/Batch5-TeamA-Frontend.git",
-  "author": "Dandi Pratama <dandi.karunia@gmail.com>",
+  "author": "Dandi Pratama <dandi.karunia@gmail.com>, Irham Nur Hakim <irhamhqm@gmail.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-inject": "^4.3.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",

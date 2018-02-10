@@ -1,0 +1,29 @@
+.login {
+  position: relative;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  &__title {
+    font-size: 22px;
+    text-align: center;
+  }
+  &__subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+  &__input-group {
+    padding: 5px 0;
+  }
+  &__input-field {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  &__button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

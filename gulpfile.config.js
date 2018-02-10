@@ -6,8 +6,9 @@ module.exports = {
             './src/assets/css/**/*.css'
         ],
         js: [
-            './node_modules/angular/angular.min.js',
+            './node_modules/angular/angular.js',
             './node_modules/@uirouter/angularjs/release/angular-ui-router.js',
+            './node_modules/angular-base64-upload/dist/angular-base64-upload.js',
             './src/**/*.module.js',
             './src/**/*.routes.js',
             './src/**/*.controller.js',

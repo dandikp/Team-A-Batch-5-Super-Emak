@@ -46,7 +46,8 @@
         data: ''
       })
         .then(function (response) {
-          onSuccess(response.data.data)
+          onSuccess(response.data.supplier)
+          console.log(response)
 
         }, function (response) {
           onError(response.statusText)
