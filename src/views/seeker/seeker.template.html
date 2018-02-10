@@ -1,4 +1,4 @@
-<div class="main__wrapper">
+<div class="main__wrapper" ng-init="init()">
     <div class="main">
         <h2 class="main__title">Seeker</h2>
         <div class="seeker__wrapper">
@@ -11,6 +11,7 @@
                             <a class="seeker__button seeker__button--no-padding seeker__button--margin-y-lg"><span class="seeker__button-icon"><i class="fa fa-filter"></i></span></a>
                         </div>
                     </div>
+                    <div ng-if="vm.dataFetched"> Success</div>
                     <div class="seeker__table-wrapper">
                         <table class="seeker__table">
                             <thead>
