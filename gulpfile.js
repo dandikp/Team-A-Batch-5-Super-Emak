@@ -111,5 +111,4 @@ gulp.task('build-index', function() {
     .pipe(rename('index.html'))
     .pipe(gulp.dest('./dist'))
 
-  console.log([buildConfig.css].concat([buildConfig.js]))
 })
