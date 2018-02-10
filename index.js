@@ -8,6 +8,6 @@ app.get('/', function(request, response) {
     response.redirect('/')
 })
 
-app.listen(8000)
+app.listen(process.env.PORT || 4200)
 
 module.exports = app
