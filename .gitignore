@@ -18,7 +18,6 @@ node_modules
 
 # DIST DIRECTORY #
 ##################
-dist
 
 # GITLAB CI/CD #
 ################
