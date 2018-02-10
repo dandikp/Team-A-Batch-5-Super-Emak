@@ -5,4 +5,4 @@
     DashboardController.$inject = []
 
     function DashboardController() { }
-})()
+})();

@@ -14,6 +14,7 @@ var uglify = require('gulp-uglify')
 var cleanCSS = require('gulp-clean-css')
 var imagemin = require('gulp-imagemin')
 var cache = require('gulp-cache')
+var debug = require('gulp-debug')
 
 
 /** DEV MODE */
@@ -52,7 +53,7 @@ gulp.task('inject-js', function() {
 })
 
 gulp.task('watch-html', function() {
-  return gulp.src('index.html')
+  return gulp.src('./index.html')
 })
 
 gulp.task('watch', function() {  
@@ -64,11 +65,11 @@ gulp.task('watch', function() {
 /** BUILD MODE */
 
 gulp.task('build', function(callback) {
-  runSequence('handle-html', 'minify-js', 'minify-css', 'minify-img', callback)
+  runSequence('minify-js', 'minify-css', 'minify-img', 'handle-fontawesome', 'handle-views', 'build-index', callback)
 })
 
 gulp.task('minify-js', function() {
-  return gulp.src(buildConfig.js)
+  return gulp.src(devConfig.js)
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(rename({ suffix: '.min' }))
@@ -76,26 +77,39 @@ gulp.task('minify-js', function() {
       console.log(err)
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('./dist/src/js'))
 })
 
 gulp.task('minify-css', function () {
-  return gulp.src(buildConfig.css)
+  return gulp.src(devConfig.css)
     .pipe(sourcemaps.init())
     .pipe(postcss([autoprefixer()]))
     .pipe(concat('main.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS({ compability: 'ie8' }))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('./dist/src/assets/css'))
 })
 
 gulp.task('minify-img', function () {
-  return gulp.src(buildConfig.img)
+  return gulp.src(devConfig.img)
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/src/img'))
+    .pipe(gulp.dest('./dist/src/assets/img'))
 })
 
-gulp.task('handle-html', function () {
-  return gulp.src(buildConfig.html)
-    .pipe(gulp.dest('dist/src'))
+gulp.task('handle-fontawesome', function() {
+  return gulp.src(devConfig.fonts)
+    .pipe(gulp.dest('./dist/src/assets/fonts'))
+})
+
+gulp.task('handle-views', function () {
+  return gulp.src(devConfig.views)
+    .pipe(gulp.dest('./dist/src'))
+})
+
+gulp.task('build-index', function() {
+  return gulp.src('./build.template.html')
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('./dist'))
+
+  console.log([buildConfig.css].concat([buildConfig.js]))
 })

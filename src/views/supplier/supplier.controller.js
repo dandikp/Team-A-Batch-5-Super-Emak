@@ -5,4 +5,4 @@
     SupplierController.$inject = []
 
     function SupplierController() { }
-})()
+})();

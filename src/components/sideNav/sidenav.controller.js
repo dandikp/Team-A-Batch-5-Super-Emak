@@ -13,4 +13,4 @@
             sideBarWrapper.classList.remove('side-nav__wrapper--open')
         }
     }
-})()
+})();

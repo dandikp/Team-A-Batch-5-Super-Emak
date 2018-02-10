@@ -5,4 +5,4 @@
     AppController.$inject = []
 
     function AppController() { }
-})()
+})();

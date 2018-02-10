@@ -14,4 +14,4 @@
             sideBarWrapper.classList.add('side-nav__wrapper--open')
         }
     }
-})()
+})();

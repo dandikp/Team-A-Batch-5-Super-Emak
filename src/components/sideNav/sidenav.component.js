@@ -5,4 +5,4 @@
             controller: 'SideNavController',
             controllerAs: 'vm'
         })
-})()
+})();
