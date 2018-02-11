@@ -3,9 +3,8 @@
     .module('app')
     .factory('supplierService', service)
 
-  service.$inject = ['$window', '$http']
 
-  function service($window, $http) {
+  function service( $http) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/suppliers'
     var headers = {
@@ -14,6 +13,7 @@
 
     service.supplier = []
     service.getSupplierPerPage = getSupplierPerPage
+    service.getTotalSupplier = getTotalSupplier
     service.getSupplierById = getSupplierById
     service.addSupplier = addSupplier
     service.editSupplier = editSupplier
@@ -38,6 +38,22 @@
         })
     }
 
+    function getTotalSupplier(onSuccess, onError) {
+      $http({
+        method: 'GET',
+        url: baseUrl,
+        headers: headers,
+        data: ''
+      })
+        .then(function (response) {
+          onSuccess(response.data.total_supplier)
+
+        }, function (response) {
+          onError(response.statusText)
+
+        })
+    }
+
     function getSupplierById(id, onSuccess, onError) {
       $http({
         method: 'GET',
@@ -46,8 +62,7 @@
         data: ''
       })
         .then(function (response) {
-          onSuccess(response.data.supplier)
-          console.log(response)
+          onSuccess(response.data.data)
 
         }, function (response) {
           onError(response.statusText)
@@ -75,10 +90,10 @@
           onSuccess(response.statusText)
         }, function (response) {
           onError(response.statusText)
-      })
+        })
     }
 
-    function editSupplier(id, payload) { // payload = supplier object without Id
+    function editSupplier(id, payload, onSuccess, onError) { // payload = supplier object without Id
       $http({
         method: 'PUT',
         url: baseUrl,

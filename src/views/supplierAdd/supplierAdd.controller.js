@@ -48,8 +48,10 @@
         vm.company_address = null
         vm.company_profile = null
         vm.photo = null
-      }, function (response) {
-        $window.alert(response)
+
+      }, function (error) {
+        $window.alert(error)
+        
       })
     }
   }

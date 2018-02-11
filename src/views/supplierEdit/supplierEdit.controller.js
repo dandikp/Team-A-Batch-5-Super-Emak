@@ -6,10 +6,14 @@
   function controller(supplierService, $state, $stateParams, $window) {
     var vm = this
     vm.currentSupplier = {}
+    vm.id = $stateParams.id
     vm.name = null
     vm.username = null
     vm.email = null
+    vm.password = null
+    vm.phone = null
     vm.photo = {
+      url: '',
       filename: '',
       filetype: '',
       filesize: '',
@@ -31,35 +35,47 @@
         vm.name = vm.currentSupplier.name
         vm.username = vm.currentSupplier.username
         vm.email = vm.currentSupplier.email
-        vm.password = vm.currentSupplier.password
+        // vm.password = vm.currentSupplier.password
+        vm.phone = vm.currentSupplier.phone * 1
         vm.company_address = vm.currentSupplier.company_address
         vm.company_profile = vm.currentSupplier.company_profile
-        vm.photo = vm.currentSupplier.photo
-      }, function (response) {
-        $window.alert(response)
+        vm.photo.url = vm.currentSupplier.photo.url
+
+      }, function (error) {
+        $window.alert(error)
 
       })
     }
 
     function editSupplier() {
-      if (!vm.name || !vm.username || !vm.email || !vm.password || !vm.company_address
+      if (!vm.name || !vm.username || !vm.email || !vm.password || !vm.phone || !vm.company_address
         || !vm.company_profile || !vm.photo) return
 
-      var id = $stateParams.id
+      
       var payload = {
+        id: vm.id,
         name: vm.name,
         username: vm.username,
         email: vm.email,
         password: vm.password,
+        phone: vm.phone,
         company_address: vm.company_address,
         company_profile: vm.company_profile,
-        photo: vm.photo
+        photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
       }
 
-      supplierService.editSupplier(id, payload)
+      supplierService.editSupplier(payload, function (response) {
+        $window.alert(response)
+
+      }, function (error) {
+        $window.alert(error)
+
+      })
       vm.name = null
       vm.username = null
       vm.email = null
+      vm.password = null
+      vm.phone = null
       vm.photo = {
         filename: '',
         filetype: '',

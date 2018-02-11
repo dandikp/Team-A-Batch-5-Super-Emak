@@ -3,7 +3,7 @@
     .module('app')
     .controller('supplierController', controller)
 
-  function controller(supplierService, $stateParams, $window) {
+  function controller(supplierService, $state, $stateParams, $window) {
     var vm = this
     vm.supplier = []
     vm.dataFetched = false
@@ -31,21 +31,21 @@
         vm.totalPage = new Array(data.total_page)
         vm.dataFetched = true
 
-      }, function (err) {
-        $window.alert(err)
+      }, function (error) {
+        $window.alert(error)
 
       })
     }
 
     function deleteSupplier(index) {
       vm.dataFetched = false
-      supplierService.deleteSupplier(index, function (resp) {
-        $window.alert(resp)
-        supplier.getSupplierPerPage(1)
+      supplierService.deleteSupplier(index, function (response) {
+        $window.alert(response)
 
-        vm.dataFetched = true
-      }, function (resp) {
-        $window.alert(resp)
+        vm.currentPage = null
+        vm.getSupplierPerPage(1)
+      }, function (error) {
+        $window.alert(error)
 
       })
     }
