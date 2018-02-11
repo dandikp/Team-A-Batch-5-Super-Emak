@@ -10,6 +10,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.14",
     "angular": "^1.6.8",
+    "angular-base64-upload": "^0.1.23",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "nodemon": "^1.14.12",

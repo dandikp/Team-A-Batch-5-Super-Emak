@@ -11,6 +11,7 @@
 		vm.dataPerPage = 10
 		vm.totalPage = -1
 		vm.currentPage = null
+		vm.dataStatus = ''
 
 		vm.init = init
 		vm.getSeekersPerPage = getSeekersPerPage
@@ -27,13 +28,14 @@
 
 			vm.dataFetched = false
 			vm.currentPage = page
+			vm.dataStatus = 'Fetching data...'
 
 			seekerService.getSeekersPerPage(page, vm.dataPerPage, function(data) {
 				vm.seeker = data.data
 				vm.totalPage = new Array(data.total_page)
 				vm.dataFetched = true
 			}, function(error) {
-				$window.alert(error)
+				vm.dataStatus = 'Couldn\'t fetch data. Try again later'
 			})
 		}
 
@@ -41,7 +43,7 @@
 			vm.dataFetched = false
 
 			seekerService.deleteSeeker(id, function(response) {
-				$window.alert(response)
+				vm.init()
 					.then(function() {
 						vm.dataFetched = true
 					})

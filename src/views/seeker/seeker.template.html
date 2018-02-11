@@ -1,54 +1,56 @@
 <div class="main__wrapper" ng-init="vm.init()">
-    <div class="main">
-        <h2 class="main__title">Seeker</h2>
-        <div class="seeker__wrapper">
-            <div class="seeker">
-                <div class="seeker__content-wrapper">
-                    <div ng-if="vm.dataFetched">
-                        <div class="seeker__table-header">
-                            <a ui-sref="seekerAdd" class="seeker__button seeker__button--padding-md seeker__button--margin-y-lg seeker__button--success" title="Add Seeker"><span class="seeker__button-icon seeker__button-icon--margin-sm"><i class="fa fa-plus"></i></span> Add</a>
-                            <div class="seeker__table-filter">
-                                <input type="text" class="seeker__input" placeholder="Search Here">
-                                <a class="seeker__button seeker__button--no-padding seeker__button--margin-y-lg"><span class="seeker__button-icon"><i class="fa fa-filter"></i></span></a>
-                            </div>
-                        </div>
-                        <div class="seeker__table-wrapper">
-                            <table class="seeker__table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
-                                        <th>&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="seeker in vm.seeker">
-                                        <td>{{ seeker.name }}</td>
-                                        <td>{{ seeker.username }}</td>
-                                        <td>{{ seeker.email }}</td>
-                                        <td>{{ seeker.phone }}</td>
-                                        <td>{{ seeker.address }}</td>
-                                        <td>
-                                            <div class="seeker__action-group">
-                                                <a ui-sref="seekerEdit" class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Update Seeker"><span class="seeker__button-icon"><i class="fa fa-edit"></i></span></a>
-                                                <a class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Deactivate Seeker" ng-click="vm.deleteSeeker(seeker.id)"><span class="seeker__button-icon"><i class="fa fa-times"></i></span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div ng-if="!vm.dataFetched">
-                        <div class="seeker__loader">
-                            Fetching data ...
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="main">
+		<h2 class="main__title">Seeker</h2>
+		<div class="seeker__wrapper">
+			<div class="seeker">
+				<div class="seeker__content-wrapper">
+					<div ng-if="vm.dataFetched">
+						<div class="seeker__table-header">
+							<a ui-sref="seekerAdd" class="seeker__button seeker__button--padding-md seeker__button--margin-y-lg seeker__button--success" title="Add Seeker"><span class="seeker__button-icon seeker__button-icon--margin-sm"><i class="fa fa-plus"></i></span> Add</a>
+							<div class="seeker__table-filter">
+								<input type="text" class="seeker__input" placeholder="Search Here">
+								<a class="seeker__button seeker__button--no-padding seeker__button--margin-y-lg"><span class="seeker__button-icon"><i class="fa fa-filter"></i></span></a>
+							</div>
+						</div>
+						<div class="seeker__table-wrapper">
+							<table class="seeker__table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Username</th>
+										<th>Email</th>
+										<th>Phone</th>
+										<th>Address</th>
+										<th>Photo</th>
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="seeker in vm.seeker">
+										<td>{{ seeker.name }}</td>
+										<td>{{ seeker.username }}</td>
+										<td>{{ seeker.email }}</td>
+										<td>{{ seeker.phone }}</td>
+										<td>{{ seeker.address }}</td>
+										<td>{{ seeker.photo.url }}</td>
+										<td>
+											<div class="seeker__action-group">
+												<a ui-sref="seekerEdit" class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Update Seeker"><span class="seeker__button-icon"><i class="fa fa-edit"></i></span></a>
+												<a class="seeker__button seeker__button--margin-x-xs seeker__button--padding-xs" title="Deactivate Seeker" ng-click="vm.deleteSeeker(seeker.id)"><span class="seeker__button-icon"><i class="fa fa-times"></i></span></a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div ng-if="!vm.dataFetched">
+						<div class="seeker__loader">
+							{{ vm.dataStatus }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

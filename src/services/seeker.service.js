@@ -13,6 +13,7 @@
 
 		service.seeker = []
 		service.getSeekersPerPage = getSeekersPerPage   
+		service.addSeeker = addSeeker
 		service.deleteSeeker = deleteSeeker 
 		
 		return service
@@ -46,9 +47,31 @@
 				}
 			})
 				.then(function(response) {
-					console.log(response)
+					onSuccess(response.status)
 				}, function(response) {
-					console.log(response)
+					onError(response.status)
+				})
+		}
+
+		function editSeeker(id, payload, onSuccess, onError) {
+			$http({
+				method: 'PUT',
+				url: baseUrl,
+				headers: headers,
+				data: {
+					id: id,
+					name: vm.name,
+					username: vm.username,
+					password: vm.password,
+					phone: vm.phone,
+					email: vm.email,
+					address: vm.address
+				}
+			})
+				.then(function(response) {
+					onSuccess(response.status)
+				}, function(response) {
+					onError(response.status)
 				})
 		}
 
