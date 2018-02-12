@@ -43,12 +43,10 @@
 			vm.dataFetched = false
 
 			seekerService.deleteSeeker(id, function(response) {
+				vm.currentPage = null
 				vm.init()
-					.then(function() {
-						vm.dataFetched = true
-					})
 			}, function(error) {
-				$window.alert(error)
+				console.log(error)
 			})
 		}
 	}
