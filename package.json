@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "repository": "git@gitlab.com:Binar/Batch5-TeamA-Frontend.git",
-  "author": "Dandi Pratama <dandi.karunia@gmail.com>",
+  "author": "Dandi Pratama <dandi.karunia@gmail.com>, Irham Nur Hakim <irhamhqm@gmail.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {

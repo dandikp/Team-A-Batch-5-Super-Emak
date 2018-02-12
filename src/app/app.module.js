@@ -3,4 +3,4 @@
         'ui.router',
         'naif.base64'
     ])
-})();
+})()

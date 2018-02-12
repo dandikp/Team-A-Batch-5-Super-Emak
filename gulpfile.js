@@ -1,3 +1,4 @@
+
 var gulp = require('gulp')
 var config =  require('./gulpfile.config')
 var devConfig = config.dev
@@ -110,5 +111,4 @@ gulp.task('build-index', function() {
   return gulp.src('./build.template.html')
     .pipe(rename('index.html'))
     .pipe(gulp.dest('./dist'))
-
 })

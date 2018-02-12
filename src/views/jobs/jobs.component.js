@@ -5,4 +5,4 @@
             controller: "JobsController",
             controllerAs: "vm"
         })
-})();
+})()

@@ -34,6 +34,21 @@
 				})
 		}
 
+		function getTotalSeeker(onSuccess, onError) {
+      $http({
+        method: 'GET',
+        url: baseUrl,
+        headers: headers,
+        data: ''
+      })
+        .then(function (response) {
+          onSuccess(response.data.total_emak)
+        }, function (response) {
+          onError(response.statusStext)
+
+        })
+    }
+
 		function getSeekerById(id, onSuccess, onError) {
 			$http({
 				method: 'GET',

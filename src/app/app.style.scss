@@ -1,22 +1,26 @@
 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 0;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
 }
 
-html {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
+html, input, textarea, button {
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 body {
-    background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.view-wrapper {
+  padding-left: 230px;
 }
 
 a {
-    text-decoration: none;
+  color: rgb(40, 40, 40);
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
 
 .main {
