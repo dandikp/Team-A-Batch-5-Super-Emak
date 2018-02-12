@@ -29,7 +29,12 @@
                             </div>
                             <div class="seeker-add__input-group">
                                 <label class="seeker-add__input-label">Photo</label>
-                                <input ng-model="vm.photo" type="file" class="seeker-add__input">
+                                <input ng-model="vm.photo" 
+                                    name="photo" 
+                                    type="file" 
+                                    class="seeker-add__input" 
+                                    base-sixty-four-input accept="image/*">
+                                <img ng-if="vm.photo.base64" ng-src="data:{{ vm.photo.filetype }};base64,{{ vm.photo.base64 }}" class="seeker-add__profile-photo" style="height: 50px; margin-top: 18px;">
                             </div>
                             <div class="seeker-add__input-group">
                                 <label class="seeker-add__input-label">Address</label>

@@ -19,7 +19,7 @@
                 component: 'seekerAdd'
             })
             .state('seekerEdit', {
-                url: '/seeker/edit',
+                url: '/seeker/edit/:id',
                 component: 'seekerEdit'
             })
             .state('supplier', {

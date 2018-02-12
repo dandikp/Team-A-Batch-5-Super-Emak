@@ -12,7 +12,12 @@
 		vm.email = null
 		vm.phone = null
 		vm.address = null
-		vm.photo = null
+		vm.photo = {
+			filename: '',
+			filetype: '',
+			filesize: '',
+			base64: ''
+		}
 
 		vm.addSeeker = addSeeker
 
@@ -26,8 +31,10 @@
 				email: vm.email,
 				phone: vm.phone,
 				address: vm.address,
-				photo: vm.photo
+				photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
 			}
+
+			console.log(payload)
 
 			seekerService.addSeeker(payload, function(response) {
 				vm.name = null
@@ -42,7 +49,7 @@
 
 				console.log(response)
 			}, function(error) {
-				$window.alert(error)
+				console.log(error)
 			})
 		}
 	}

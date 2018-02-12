@@ -15,6 +15,8 @@
 		service.getSeekersPerPage = getSeekersPerPage   
 		service.addSeeker = addSeeker
 		service.deleteSeeker = deleteSeeker 
+		service.getSeekerById = getSeekerById
+		service.editSeeker = editSeeker
 		
 		return service
 
@@ -32,6 +34,19 @@
 				})
 		}
 
+		function getSeekerById(id, onSuccess, onError) {
+			$http({
+				method: 'GET',
+				url: baseUrl + '/' + id,
+				data: ''
+			})
+				.then(function(response) {
+					onSuccess(response.data.data)
+				}, function() {
+					onError(response.status)
+				})
+		}
+
 		function addSeeker(payload, onSuccess, onError) {
 			$http({
 				method: 'POST',
@@ -43,7 +58,8 @@
 					password: payload.password,
 					phone: payload.phone,
 					email: payload.email,
-					address: payload.address
+					address: payload.address,
+					photo: payload.photo
 				}
 			})
 				.then(function(response) {
@@ -56,7 +72,7 @@
 		function editSeeker(id, payload, onSuccess, onError) {
 			$http({
 				method: 'PUT',
-				url: baseUrl,
+				url: baseUrl + '/' + id,
 				headers: headers,
 				data: {
 					id: id,

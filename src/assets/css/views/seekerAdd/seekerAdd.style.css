@@ -75,8 +75,8 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     width: 45%;
     margin: 2px 5% 15px 0; }
     @media screen and (max-width: 600px) {
