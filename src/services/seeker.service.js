@@ -17,6 +17,7 @@
 		service.deleteSeeker = deleteSeeker 
 		service.getSeekerById = getSeekerById
 		service.editSeeker = editSeeker
+		service.getTotalSeeker = getTotalSeeker
 		
 		return service
 
