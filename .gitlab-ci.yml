@@ -3,9 +3,6 @@ image: 'node:carbon'
 before_script:
   - 'apt-get update -yq'
   - 'apt-get install -y ruby ruby-dev rubygems-integration'
-  - 'gem install sass'
-  - 'npm set progress=false'
-  - 'npm install --save --silent'
   
 stages:
   - build
