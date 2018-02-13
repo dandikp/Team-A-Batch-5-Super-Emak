@@ -45,7 +45,7 @@
           console.log(response)
           onSuccess(response.data.total_jobs)
 
-        }, function () {
+        }, function (response) {
           onError(response.statusText)
 
         })
