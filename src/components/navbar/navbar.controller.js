@@ -18,9 +18,11 @@
                 if (response === 'OK') {
                     $window.alert('Logging out')
                     $state.go('login')
+                } else {
+                    $window.alert(response)
                 }
             }, function (response) {
-
+                $window.alert(response)
             })
         }
     }

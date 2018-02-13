@@ -47,6 +47,8 @@
       }, function (error) {
         $window.alert(error)
 
+        vm.currentPage = null
+        vm.getSupplierPerPage(1)
       })
     }
 

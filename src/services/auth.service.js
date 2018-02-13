@@ -3,48 +3,50 @@
     .module('app')
     .factory('authService', authService)
 
-  function authService($window) {
+  function authService($window, $http) {
     var auth = {}
-    var storage = $window.localStorage
+    var baseUrl = 'http://mamabison-dev.herokuapp.com/api/v1/auth_admin'
+    auth.storage = $window.localStorage
     auth.login = login
     auth.logout = logout
     auth.isLoggedIn = isLoggedIn
 
     return auth
 
-
     ////
     function login(username, password, onSuccess, onError) {
-      if (username === 'admin' && password === 'admin1234') {
-        storage.setItem('isLoggedIn', 'true')
+      $http({
+        url: baseUrl,
+        method: 'POST',
+        data: {
+          'username': username,
+          'password': password
+        }
+      })
+        .then(function (response) {
+          if (!response.data.auth_invalid) {
+            auth.storage.setItem('token', response.data.token)
 
-        onSuccess('OK')
-      } else {
-        if (username !== 'admin' && password !== 'admin1234') {
-          onError('Username and password are incorrect') 
-          return
-        }
-        if (username !== 'admin') {
-          onError('Username is incorrect')
-          return
-        }
-        if (password !== 'admin1234') {
-          onError('Password is incorrect')
-          return
-        }
-      }
+            onSuccess('OK')
+          } else {
+            onError(response.data.auth_invalid)
+
+          }
+        }, function (response) {
+          console.log(response)
+
+        })
     }
 
     function logout(onSuccess, onError) {
-      storage.removeItem('isLoggedIn')
+      auth.storage.removeItem('token')
 
       onSuccess('OK')
-
-      // onError('Logout Failed due to' + )
     }
 
     function isLoggedIn() {
-      return storage.getItem('isLoggedIn') ? true : false
+      return auth.storage.getItem('token') ? true : false
     }
+
   }
 })();
