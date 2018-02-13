@@ -8,7 +8,6 @@ before_script:
   - 'npm install -g nodemon'
   - 'npm install -g gulp-cli'
   - 'npm install --save --silent'
-  - 'npm run build'
   
 stages:
   - build
@@ -19,6 +18,7 @@ build_and_deploy_prod:
   script:
     - 'gem install dpl'
     - 'dpl --provider=heroku --app=dev-superemak --api-key=6c15cd6f-ea16-478e-b663-da4f917e7469'
+    - 'npm run build'
   only:
     - cms-dev
     - develop
