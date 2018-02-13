@@ -36,7 +36,7 @@
   },
   "scripts": {
     "dev": "lite-server -c bs-config.json",
-    "preinstall": "npm install -g gulp-cli && npm install gulp gulp-cache gulp-clean-css gulp-concat gulp-imagemin gulp-inject gulp-postcss gulp-rename gulp-sourcemaps gulp-uglify run-sequence gulp-ruby-sass gulp-watch gulp-debug --save && npm link npm install gulp gulp-cache gulp-clean-css gulp-concat gulp-imagemin gulp-inject gulp-postcss gulp-rename gulp-sourcemaps gulp-uglify run-sequence gulp-ruby-sass gulp-watch gulp-debug",
+    "preinstall": "npm install -g gulp-cli && npm install gulp gulp-cache gulp-clean-css gulp-concat gulp-imagemin gulp-inject gulp-postcss gulp-rename gulp-sourcemaps gulp-uglify run-sequence gulp-ruby-sass gulp-watch gulp-debug --save",
     "postinstall": "gulp build",
     "start": "node index.js"
   }
