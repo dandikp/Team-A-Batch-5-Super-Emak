@@ -15,3 +15,7 @@ node_modules
 # DIST DIRECTORY #
 ##################
 dist
+
+# YARN LOCK FILE #
+##################
+yarn.lock
