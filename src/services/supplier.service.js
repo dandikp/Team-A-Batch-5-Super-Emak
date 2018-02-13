@@ -4,7 +4,7 @@
     .factory('supplierService', service)
 
 
-  function service( $http) {
+  function service($http) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/suppliers'
     var headers = {
