@@ -2,6 +2,8 @@
   angular
     .module('app')
     .controller('loginController', loginController)
+  
+  loginController.$inject = ['authService', '$state', '$window']
 
   function loginController(authService, $state, $window) {
     var vm = this
