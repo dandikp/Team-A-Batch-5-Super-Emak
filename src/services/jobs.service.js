@@ -47,7 +47,6 @@
 
         }, function (response) {
           onError(response.statusText)
-
         })
     }
 
