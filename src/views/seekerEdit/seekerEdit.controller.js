@@ -47,16 +47,27 @@
         function editSeeker() {
 			if (!vm.name || !vm.username || !vm.password || !vm.email) return
 
-			var payload = {
-				name: vm.name,
-				username: vm.username,
-				password: vm.password,
-				email: vm.email,
-				phone: vm.phone,
-				address: vm.address,
-				photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
+            if (!vm.photo) {
+                var payload = {
+                    name: vm.name,
+                    username: vm.username,
+                    password: vm.password,
+                    email: vm.email,
+                    phone: vm.phone,
+                    address: vm.address
+                }
+            } else {
+                var payload = {
+                    name: vm.name,
+                    username: vm.username,
+                    password: vm.password,
+                    email: vm.email,
+                    phone: vm.phone,
+                    address: vm.address,
+                    photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
+                }
             }
-            
+
             seekerService.editSeeker(vm.id, payload, function(response) {
                 vm.name = null
                 vm.username = null

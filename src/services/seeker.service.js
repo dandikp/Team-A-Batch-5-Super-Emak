@@ -42,7 +42,7 @@
 			})
 				.then(function(response) {
 					onSuccess(response.data.data)
-				}, function() {
+				}, function(response) {
 					onError(response.status)
 				})
 		}
