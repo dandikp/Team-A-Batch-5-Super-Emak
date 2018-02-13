@@ -3,14 +3,15 @@
     .module('app')
     .factory('jobsService', service)
 
-  service.$inject = ['$http']
-  
-  function service($http) {
+  service.$inject = ['$http', '$window']
+
+  function service($http, $window) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/jobs'
     var headers = {
-      'Access-Control-Allow-Origin': '*'
+      'Authorization': $window.localStorage.getItem('token')
     }
+
 
     service.getTotalJobs = getTotalJobs
 
@@ -26,7 +27,6 @@
       })
         .then(function (response) {
           onSuccess(response.data)
-          console.log(response)
 
         }, function (response) {
           onError(response.statusText)
@@ -42,7 +42,6 @@
         data: ''
       })
         .then(function (response) {
-          console.log(response)
           onSuccess(response.data.total_jobs)
 
         }, function (response) {
@@ -77,8 +76,10 @@
       })
         .then(function (response) {
           onSuccess(response.statusText)
+
         }, function (response) {
           onError(response.statusText)
+          
         })
     }
 

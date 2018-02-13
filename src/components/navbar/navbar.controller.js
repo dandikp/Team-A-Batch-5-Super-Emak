@@ -18,11 +18,13 @@
 		function logout() {
 			authService.logout(function (response) {
 				if (response === 'OK') {
-					console.log('Logging out')
+					$window.alert('Logging out')
 					$state.go('login')
+				} else {
+					$window.alert(response)
 				}
 			}, function (response) {
-
+				$window.alert(response)
 			})
 		}
 	}

@@ -45,7 +45,7 @@
                   <td>{{ supplier.company_profile }}</td>
                   <td>{{ supplier.company_address }}</td>
                   <td>
-                    <img ng-src="{{supplier.photo.url}}" alt="Profile photo" style="height: 100px;">
+                    <img ng-if="supplier.photo.url" ng-src="{{supplier.photo.url}}" alt="Profile photo" style="height: 100px;">
                   </td>
                   <td>
                     <a ui-sref="supplierEdit({id: supplier.id})">

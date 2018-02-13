@@ -18,7 +18,7 @@
       if (!vm.username || !vm.password) return
       
       authService.login(vm.username, vm.password, function (response) {
-        if (response === 'OK') $state.go('dashboard')
+        $state.go('dashboard')
 
       }, function (response) {
         $window.alert(response)

@@ -5,11 +5,11 @@
 
   service.$inject = ['$http']
 
-  function service( $http) {
+  function service($window, $http) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/suppliers'
     var headers = {
-      'Access-Control-Allow-Origin': '*'
+      'Authorization': $window.localStorage.getItem('token')
     }
 
     service.supplier = []
