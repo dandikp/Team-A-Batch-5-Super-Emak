@@ -6,8 +6,8 @@ before_script:
   - 'gem install sass'
   - 'npm set progress=false'
   - 'npm install -g nodemon'
-  - 'npm intall -g gulp-cli'
-  - 'npm install --save'
+  - 'npm install -g gulp-cli'
+  - 'npm install --save --silent'
   
 stages:
   - build
