@@ -36,7 +36,7 @@
   },
   "scripts": {
     "dev": "lite-server -c bs-config.json",
-    "build": "gulp build",
+    "postinstall": "gulp build",
     "start": "node index.js"
   }
 }
