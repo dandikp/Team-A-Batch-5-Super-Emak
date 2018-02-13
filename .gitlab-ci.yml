@@ -7,7 +7,7 @@ before_script:
   - 'npm set progress=false'
   - 'npm install -g nodemon'
   - 'npm intall -g gulp-cli'
-  - 'npm install --save --silent'
+  - 'npm install --save'
   
 stages:
   - build
