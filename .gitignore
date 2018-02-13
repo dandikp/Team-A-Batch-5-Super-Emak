@@ -1,9 +1,6 @@
 # INDEX #
 #########
-
-# GULP #
-########
-gulpfile.js
+index.html
 
 # SASS #
 ########
@@ -17,6 +14,4 @@ node_modules
 
 # DIST DIRECTORY #
 ##################
-
-# GITLAB CI/CD #
-################
+dist
