@@ -3,6 +3,8 @@
     .module('app')
     .controller('supplierEditCtrl', controller)
 
+  controller.$inject = ['supplierService', '$state', '$stateParams', '$window']
+
   function controller(supplierService, $state, $stateParams, $window) {
     var vm = this
     vm.currentSupplier = {}

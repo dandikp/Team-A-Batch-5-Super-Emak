@@ -3,6 +3,8 @@
     .module('app')
     .controller('supplierAddController', controller)
 
+  controller.$inject = ['supplierService', '$window']
+  
   function controller(supplierService, $window) {
     var vm = this
     vm.name = null

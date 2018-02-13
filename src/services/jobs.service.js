@@ -3,6 +3,8 @@
     .module('app')
     .factory('jobsService', service)
 
+  service.$inject = ['$http']
+  
   function service($http) {
     var service = {}
     var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/jobs'

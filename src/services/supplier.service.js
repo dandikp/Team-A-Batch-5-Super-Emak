@@ -3,6 +3,7 @@
     .module('app')
     .factory('supplierService', service)
 
+  service.$inject = ['$http']
 
   function service( $http) {
     var service = {}

@@ -1,44 +1,47 @@
 (function () {
-    angular.module('app')
-        .controller('DashboardController', DashboardController)
-    function DashboardController(jobsService, seekerService, supplierService) {
-        var vm = this
-        vm.totalJobs = null
-        vm.totalSeeker = null
-        vm.totalSupplier = null
+	angular.module('app')
+		.controller('DashboardController', DashboardController)
+	
+	DashboardController.$inject = ['jobsService', 'seekerService', 'supplierService']
 
-        vm.getTotalJobs = getTotalJobs
-        vm.getTotalSeeker = getTotalSeeker
-        vm.getTotalSupplier = getTotalSupplier
+	function DashboardController(jobsService, seekerService, supplierService) {
+		var vm = this
+		vm.totalJobs = null
+		vm.totalSeeker = null
+		vm.totalSupplier = null
 
-        //
-        getTotalJobs()
-        getTotalSeeker()
-        getTotalSupplier()
+		vm.getTotalJobs = getTotalJobs
+		vm.getTotalSeeker = getTotalSeeker
+		vm.getTotalSupplier = getTotalSupplier
 
-        /////////////
-        function getTotalJobs() {
-            jobsService.getTotalJobs(function (response) {
-                vm.totalJobs = response
-            }, function (response) {
-                // do something hehehehehehhhhhhhhhh
-            })
-        }
+		//
+		getTotalJobs()
+		getTotalSeeker()
+		getTotalSupplier()
 
-        function getTotalSeeker() {
-            seekerService.getTotalSeeker(function (response) {
-                vm.totalSeeker = response
-            }, function (response) {
-                // something to handle errors
-            })
-        }
+		/////////////
+		function getTotalJobs() {
+			jobsService.getTotalJobs(function (response) {
+				vm.totalJobs = response
+			}, function (response) {
+				// do something hehehehehehhhhhhhhhh
+			})
+		}
 
-        function getTotalSupplier() {
-            supplierService.getTotalSupplier(function (response) {
-                vm.totalSupplier = response
-            }, function (response) {
-                //     $window.alert(response)
-            })
-        }
-    }
-})()
+		function getTotalSeeker() {
+			seekerService.getTotalSeeker(function (response) {
+				vm.totalSeeker = response
+			}, function (response) {
+				// something to handle errors
+			})
+		}
+
+		function getTotalSupplier() {
+			supplierService.getTotalSupplier(function (response) {
+				vm.totalSupplier = response
+			}, function (response) {
+				//     $window.alert(response)
+			})
+		}
+	}
+})();

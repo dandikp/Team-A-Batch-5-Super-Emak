@@ -5,7 +5,7 @@ var app = express()
 app.use('/', express.static(path.join(__dirname, 'dist')))
 
 app.get('/', function(request, response) {
-    response.redirect('/')
+	response.redirect('/')
 })
 
 app.listen(process.env.PORT || 4200)

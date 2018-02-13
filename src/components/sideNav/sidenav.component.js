@@ -1,8 +1,8 @@
 (function() {
-    angular.module('app')
-        .component('sideNav', {
-            templateUrl: './src/components/sideNav/sidenav.template.html',
-            controller: 'SideNavController',
-            controllerAs: 'vm'
-        })
+	angular.module('app')
+		.component('sideNav', {
+			templateUrl: './src/components/sideNav/sidenav.template.html',
+			controller: 'SideNavController',
+			controllerAs: 'vm'
+		})
 })();

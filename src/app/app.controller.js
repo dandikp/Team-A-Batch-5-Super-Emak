@@ -1,20 +1,22 @@
 (function () {
-    angular.module('app')
-        .controller('AppController', AppController)
+	angular.module('app')
+		.controller('AppController', AppController)
 
-    function AppController($transitions, $rootScope, authService, $state) {
-        var vm = this
-        vm.onStart = onStart
+	AppController.$inject = ['$transitions', '$rootScope', 'authService', '$state']
 
-        onStart()
+	function AppController($transitions, $rootScope, authService, $state) {
+		var vm = this
+		vm.onStart = onStart
 
-        function onStart() {
-            if (!authService.isLoggedIn()) $state.go('login')
-        }
+		onStart()
 
-        $transitions.onEnter({}, function (transition) {
-            if (!authService.isLoggedIn()) $state.go('login')
-        })
+		function onStart() {
+			if (!authService.isLoggedIn()) $state.go('login')
+		}
 
-    }
-})()
+		$transitions.onEnter({}, function (transition) {
+			if (!authService.isLoggedIn()) $state.go('login')
+		})
+
+	}
+})();

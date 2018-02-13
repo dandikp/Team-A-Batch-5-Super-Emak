@@ -1,27 +1,29 @@
 (function() {
-    angular.module('app')
-        .controller('NavbarController', NavbarController)
-        
-    function NavbarController(authService, $window, $state) {
-        var vm = this
+	angular.module('app')
+		.controller('NavbarController', NavbarController)
 
-        vm.openSideBar = openSideBar
-        vm.logout = logout
+	NavbarController.$inject = ['authService', '$window', '$state']
+		
+	function NavbarController(authService, $window, $state) {
+		var vm = this
 
-        function openSideBar() {
-            var sideBarWrapper = document.querySelector('.side-nav__wrapper')
-            sideBarWrapper.classList.add('side-nav__wrapper--open')
-        }
+		vm.openSideBar = openSideBar
+		vm.logout = logout
 
-        function logout() {
-            authService.logout(function (response) {
-                if (response === 'OK') {
-                    $window.alert('Logging out')
-                    $state.go('login')
-                }
-            }, function (response) {
+		function openSideBar() {
+			var sideBarWrapper = document.querySelector('.side-nav__wrapper')
+			sideBarWrapper.classList.add('side-nav__wrapper--open')
+		}
 
-            })
-        }
-    }
-})()
+		function logout() {
+			authService.logout(function (response) {
+				if (response === 'OK') {
+					console.log('Logging out')
+					$state.go('login')
+				}
+			}, function (response) {
+
+			})
+		}
+	}
+})();

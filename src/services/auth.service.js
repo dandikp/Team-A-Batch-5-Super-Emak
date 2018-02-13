@@ -3,6 +3,8 @@
     .module('app')
     .factory('authService', authService)
 
+  authService.$inject = ['$window']
+
   function authService($window) {
     var auth = {}
     var storage = $window.localStorage

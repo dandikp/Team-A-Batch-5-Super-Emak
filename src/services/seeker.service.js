@@ -2,9 +2,9 @@
 	angular.module('app')
 		.factory('seekerService', seekerService)
 
-	seekerService.$inject = ['$window', '$http']
+	seekerService.$inject = ['$http']
 
-	function seekerService($window, $http) {
+	function seekerService($http) {
 		var service = {}
 		var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/emaks'
 		var headers = {
@@ -58,7 +58,7 @@
 			})
 				.then(function(response) {
 					onSuccess(response.data.data)
-				}, function() {
+				}, function(response) {
 					onError(response.status)
 				})
 		}

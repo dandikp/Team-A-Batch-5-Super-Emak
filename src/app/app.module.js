@@ -1,6 +1,6 @@
 (function () {
-    angular.module('app', [
-        'ui.router',
-        'naif.base64'
-    ])
-})()
+	angular.module('app', [
+		'ui.router',
+		'naif.base64'
+	])
+})();
