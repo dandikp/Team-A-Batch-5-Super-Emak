@@ -7,6 +7,7 @@
     var vm = this
     vm.currentSupplier = {}
     vm.id = $stateParams.id
+    console.log(vm.id)
     vm.name = null
     vm.username = null
     vm.email = null
@@ -51,9 +52,7 @@
       if (!vm.name || !vm.username || !vm.email || !vm.password || !vm.phone || !vm.company_address
         || !vm.company_profile || !vm.photo) return
 
-      
       var payload = {
-        id: vm.id,
         name: vm.name,
         username: vm.username,
         email: vm.email,
@@ -64,27 +63,14 @@
         photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
       }
 
-      supplierService.editSupplier(payload, function (response) {
+      supplierService.editSupplier(vm.id, payload, function (response) {
         $window.alert(response)
+        $state.go('supplier')
 
       }, function (error) {
         $window.alert(error)
 
       })
-      vm.name = null
-      vm.username = null
-      vm.email = null
-      vm.password = null
-      vm.phone = null
-      vm.photo = {
-        filename: '',
-        filetype: '',
-        filesize: '',
-        base64: ''
-      }
-      vm.company_address = null
-      vm.company_profile = null
-      $state.go('supplier')
     }
   }
 })();
