@@ -4,9 +4,10 @@ before_script:
   - 'apt-get update -yq'
   - 'apt-get install -y ruby ruby-dev rubygems-integration'
   - 'gem install sass'
-  - 'npm install -g nodemon'
   - 'npm set progress=false'
-  - 'npm install --silent'
+  - 'npm install -g nodemon'
+  - 'npm intall -g gulp-cli'
+  - 'npm install --save --silent'
   
 stages:
   - build
