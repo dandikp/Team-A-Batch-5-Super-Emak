@@ -1,0 +1,68 @@
+<navbar></navbar>
+<side-nav></side-nav>
+<div class="main__wrapper">
+  <div class="main">
+    <h2 class="main__title">Supplier</h2>
+    <div class="supplier__wrapper">
+      <div class="supplier__content-wrapper">
+        <div ng-if="vm.dataFetched">
+          <div class="supplier__table-header">
+            <a ui-sref="supplierAdd" class="supplier__button supplier__button--padding-md supplier__button--margin-y-lg supplier__button--success"
+              title="Add supplier">
+              <span class="supplier__button-icon supplier__button-icon--margin-sm">
+                <i class="fa fa-plus"></i>
+              </span> Add
+            </a>
+            <div class="supplier__table-filter">
+              <input type="text" class="supplier__input" placeholder="Search Here">
+              <a class="supplier__button supplier__button--no-padding supplier__button--margin-y-lg">
+                <span class="supplier__button-icon">
+                  <i class="fa fa-filter"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="supplier__table-wrapper">
+            <table class="supplier__table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Company Profile</th>
+                  <th>Company Address</th>
+                  <th>Photo</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="supplier in vm.supplier">
+                  <td>{{ supplier.name }}</td>
+                  <td>{{ supplier.username }}</td>
+                  <td>{{ supplier.email }}</td>
+                  <td>{{ supplier.phone }}</td>
+                  <td>{{ supplier.company_profile }}</td>
+                  <td>{{ supplier.company_address }}</td>
+                  <td>
+                    <img ng-src="{{supplier.photo.url}}" alt="Profile photo" style="height: 100px;">
+                  </td>
+                  <td>
+                    <a ui-sref="supplierEdit({id: supplier.id})">
+                      <button>Edit</button>
+                    </a>
+                    <button ng-click="vm.deleteSupplier(supplier.id)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button ng-click="vm.getSupplierPerPage(vm.currentPage - 1)"> Previous </button>
+          <button ng-repeat="i in vm.totalPage track by $index" ng-click="vm.getSupplierPerPage($index + 1)">{{ $index + 1 }}</button>
+          <button ng-click="vm.getSupplierPerPage(vm.currentPage + 1)"> Next </button>
+        </div>
+        <div ng-if="!vm.dataFetched">Fetching data...</div>
+      </div>
+    </div>
+  </div>
+</div>

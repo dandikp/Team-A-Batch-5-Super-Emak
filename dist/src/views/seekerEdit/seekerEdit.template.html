@@ -1,0 +1,65 @@
+<navbar></navbar>
+<side-nav></side-nav>
+<div class="main__wrapper" ng-init="vm.init()">
+    <div class="main">
+        <h2 class="main__title">Seeker</h2>
+        <div class="seeker-edit__wrapper">
+            <div class="seeker-edit">
+                <div class="seeker-edit__content-wrapper">
+                    <h3 class="seeker-edit__content-title">Edit Seeker</h3>
+                    <div class="seeker-edit__content">
+                        <form ng-submit="vm.editSeeker()" class="seeker-edit__form" enctype="multipart/form-data">
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Name</label>
+                                <input ng-model="vm.name" type="text" class="seeker-edit__input" required="required">
+                            </div>
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Username</label>
+                                <input ng-model="vm.username" type="text" class="seeker-edit__input" required="required">
+                            </div>
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Phone Number</label>
+                                <input ng-model="vm.phone" type="text" class="seeker-edit__input">
+                            </div>
+                            <!-- <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Password</label>
+                                <input ng-model="vm.password" type="password" class="seeker-edit__input" required="required">
+                            </div> -->
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Email</label>
+                                <input ng-model="vm.email" type="email" class="seeker-edit__input" required="required">
+                            </div>
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Address</label>
+                                <textarea ng-model="vm.address" class="seeker-edit__input"></textarea>
+                            </div>
+                            <div class="seeker-edit__input-group">
+                                <label class="seeker-edit__input-label">Photo</label>
+                                <input ng-model="vm.photo" 
+                                    name="photo" 
+                                    type="file" 
+                                    class="seeker-edit__input" 
+                                    base-sixty-four-input accept="image/*">
+                                <img ng-if="vm.photo.base64" 
+                                    ng-src="data:{{ vm.photo.filetype }};base64,{{ vm.photo.base64 }}" 
+                                    class="seeker-edit__profile-photo" style="height: 50px; margin-top: 18px;">
+                                <img ng-if="vm.photo.url && !vm.photo.base64" 
+                                    ng-src="{{ vm.photo.url }}" style="height: 50px; margin-top: 18px;" alt="Photo">
+                            </div>
+                            <div class="seeker-edit__button-group">
+                                <button class="seeker-edit__button seeker-edit__button--padding-lg seeker-edit__button--danger" type="reset">
+                                    <span class="seeker-edit__button-icon seeker-edit__button-icon--margin-sm"><i class="fa fa-times"></i></span>
+                                    Cancel
+                                </button>
+                                <button class="seeker-edit__button seeker-edit__button--padding-lg seeker-edit__button--success seeker-edit__button--margin-x-sm" type="submit">
+                                    <span class="seeker-edit__button-icon seeker-edit__button-icon--margin-sm"><i class="fa fa-save"></i></span>
+                                    Save
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
