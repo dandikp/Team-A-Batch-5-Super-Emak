@@ -38,8 +38,6 @@
         photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
       }
 
-      console.log(payload)
-
       supplierService.addSupplier(payload, function (response) {
         $window.alert(response)
         vm.name = null

@@ -97,10 +97,9 @@
     function editSupplier(id, payload, onSuccess, onError) { // payload = supplier object without Id
       $http({
         method: 'PUT',
-        url: baseUrl,
+        url: baseUrl + '/' + id,
         headers: headers,
         data: {
-          'id': id,
           'name': payload.name,
           'username': payload.username,
           'email': payload.email,
@@ -113,8 +112,10 @@
       })
         .then(function (response) {
           onSuccess(response.statusText)
+
         }, function (response) {
           onError(response.statusText)
+
         })
     }
 

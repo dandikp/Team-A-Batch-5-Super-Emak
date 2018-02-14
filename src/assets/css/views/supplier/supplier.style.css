@@ -93,12 +93,16 @@
       background-color: #69f0ae;
       border: 1px solid #00e676;
       color: #ffffff; }
+      .supplier__button--success:visited {
+        color: #ffffff; }
     .supplier__button--danger {
       -webkit-box-shadow: unset;
               box-shadow: unset;
       background-color: #ff8a80;
       border: 1px solid #ff5252;
       color: #ffffff; }
+      .supplier__button--danger:visited {
+        color: #ffffff; }
   .supplier__button-icon {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;

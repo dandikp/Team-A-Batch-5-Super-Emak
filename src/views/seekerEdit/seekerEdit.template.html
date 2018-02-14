@@ -5,7 +5,7 @@
         <h2 class="main__title">Seeker</h2>
         <div class="seeker-edit__wrapper">
             <div class="seeker-edit">
-                <div class="seeker-edit__content-wrapper">
+                <div ng-if="!vm.isEditing" class="seeker-edit__content-wrapper">
                     <h3 class="seeker-edit__content-title">Edit Seeker</h3>
                     <div class="seeker-edit__content">
                         <form ng-submit="vm.editSeeker()" class="seeker-edit__form" enctype="multipart/form-data">
@@ -62,6 +62,9 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div ng-if="vm.isEditing" class="seeker-edit__content-wrapper">
+                    Loading...
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ build_and_deploy_prod:
   stage: build
   script:
     - 'gem install dpl'
-    - 'dpl --provider=heroku --app=dev-superemak --api-key=6c15cd6f-ea16-478e-b663-da4f917e7469'    
+    - 'dpl --provider=heroku --app=super-emak --api-key=56a16017-5a3f-4949-894d-696bd7e60c67'
   only:
     - cms-dev
     - develop

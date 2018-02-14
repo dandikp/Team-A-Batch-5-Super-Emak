@@ -57,6 +57,8 @@
 				photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
 			}
 
+			vm.isEditing = true
+
 			seekerService.editSeeker(vm.id, payload, function(response) {
 				vm.name = null
 				vm.username = null
@@ -70,11 +72,10 @@
 					filesize: '',
 					base64: ''
 				}
+				
 
-				Promise.prototype.then(function() {
-					console.log(response)
-					$state.go('seeker')
-				})
+				vm.isEditing = false
+				$state.go('seeker')
 			}, function(error) {
 				console.log(error)
 

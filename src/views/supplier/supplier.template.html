@@ -49,10 +49,10 @@
                       <img ng-if="supplier.photo.url" ng-src="{{supplier.photo.url}}" alt="Profile photo" style="height: 100px;">
                     </td>
                     <td>
-                      <a ui-sref="supplierEdit({id: supplier.id})">
-                        <button>Edit</button>
-                      </a>
-                      <button ng-click="vm.deleteSupplier(supplier.id)">Delete</button>
+											<div class="supplier__action-group">
+												<a ui-sref="supplierEdit({ id: supplier.id })" class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Edit supplier"><span class="supplier__button-icon"><i class="fa fa-edit"></i></span></a>
+												<a class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Delete supplier" ng-click="vm.deletesupplier(supplier.id)"><span class="supplier__button-icon"><i class="fa fa-trash"></i></span></a>
+											</div>
                     </td>
                   </tr>
                 </tbody>
