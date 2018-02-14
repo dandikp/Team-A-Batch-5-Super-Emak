@@ -42,13 +42,9 @@
     function deleteSupplier(index) {
       vm.dataFetched = false
       supplierService.deleteSupplier(index, function (response) {
-        $window.alert(response)
-
         vm.currentPage = null
         vm.getSupplierPerPage(1)
       }, function (error) {
-        $window.alert(error)
-
         vm.currentPage = null
         vm.getSupplierPerPage(1)
       })

@@ -3,9 +3,9 @@
     .module('app')
     .controller('supplierAddController', controller)
 
-  controller.$inject = ['supplierService', '$window']
+  controller.$inject = ['supplierService', '$window', '$state']
   
-  function controller(supplierService, $window) {
+  function controller(supplierService, $window, $state) {
     var vm = this
     vm.name = null
     vm.username = null
@@ -39,7 +39,7 @@
       }
 
       supplierService.addSupplier(payload, function (response) {
-        $window.alert(response)
+        console.log(response)
         vm.name = null
         vm.username = null
         vm.email = null
@@ -49,8 +49,9 @@
         vm.company_profile = null
         vm.photo = null
 
+        $state.go('supplier')
       }, function (error) {
-        $window.alert(error)
+        console.log(error)
         
       })
     }
