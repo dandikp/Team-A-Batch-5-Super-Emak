@@ -7,7 +7,6 @@
     var vm = this
     vm.currentSupplier = {}
     vm.id = $stateParams.id
-    console.log(vm.id)
     vm.name = null
     vm.username = null
     vm.email = null
@@ -22,6 +21,7 @@
     }
     vm.company_address = null
     vm.company_profile = null
+    vm.isEditing = false
     //
     vm.getSupplierById = getSupplierById
     vm.editSupplier = editSupplier
@@ -52,6 +52,8 @@
       if (!vm.name || !vm.username || !vm.email || !vm.password || !vm.phone || !vm.company_address
         || !vm.company_profile || !vm.photo) return
 
+      vm.isEditing = true
+
       var payload = {
         name: vm.name,
         username: vm.username,
@@ -65,6 +67,7 @@
 
       supplierService.editSupplier(vm.id, payload, function (response) {
         $window.alert(response)
+        vm.isEditing = false
         $state.go('supplier')
 
       }, function (error) {
