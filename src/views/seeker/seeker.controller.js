@@ -8,7 +8,7 @@
 		var vm = this
 		vm.seeker = []
 		vm.dataFetched = false
-		vm.dataPerPage = 2
+		vm.dataPerPage = 10
 		vm.totalPage = -1
 		vm.currentPage = null
 		vm.dataStatus = ''
