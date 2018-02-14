@@ -68,12 +68,10 @@
       }
 
       supplierService.editSupplier(vm.id, payload, function (response) {
-        console.log(response)
         vm.isEditing = false
         $state.go('supplier')
 
       }, function (error) {
-        console.log(error)
 
       })
     }

@@ -88,7 +88,7 @@ gulp.task('minify-css', function () {
     .pipe(concat('main.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS({ compability: 'ie8' }))
-    .pipe(gulp.dest('./dist/src/assets/css'))
+    .pipe(gulp.dest('./dist/src/assets/css/production/main'))
 })
 
 gulp.task('minify-img', function () {
@@ -99,7 +99,7 @@ gulp.task('minify-img', function () {
 
 gulp.task('handle-fontawesome', function() {
   return gulp.src(devConfig.fonts)
-    .pipe(gulp.dest('./dist/src/assets/fonts'))
+    .pipe(gulp.dest('./dist/src/assets/css/production/fonts'))
 })
 
 gulp.task('handle-views', function () {

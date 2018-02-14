@@ -34,7 +34,6 @@
         vm.dataFetched = true
 
       }, function (error) {
-        $window.alert(error)
 
       })
     }

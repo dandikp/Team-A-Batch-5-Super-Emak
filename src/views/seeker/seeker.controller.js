@@ -46,7 +46,7 @@
 				vm.currentPage = null
 				vm.init()
 			}, function(error) {
-				console.log(error)
+				
 			})
 		}
 	}

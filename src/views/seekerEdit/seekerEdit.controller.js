@@ -40,7 +40,7 @@
 				vm.address = response.address
 				vm.photo = response.photo
 			}, function(error) {
-				console.log(error)
+				
 			})
 		}
 
@@ -72,12 +72,10 @@
 					filesize: '',
 					base64: ''
 				}
-				
 
 				vm.isEditing = false
 				$state.go('seeker')
 			}, function(error) {
-				console.log(error)
 
 			})
 		}

@@ -39,7 +39,6 @@
       }
 
       supplierService.addSupplier(payload, function (response) {
-        console.log(response)
         vm.name = null
         vm.username = null
         vm.email = null
@@ -51,7 +50,6 @@
 
         $state.go('supplier')
       }, function (error) {
-        console.log(error)
         
       })
     }

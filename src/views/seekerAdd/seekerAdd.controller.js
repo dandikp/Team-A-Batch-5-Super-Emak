@@ -22,7 +22,7 @@
 		vm.addSeeker = addSeeker
 
 		function addSeeker() {
-			if (!vm.name || !vm.username || !vm.password || !vm.email || vm.phone || vm.photo) return
+			if (!vm.name || !vm.username || !vm.password || !vm.email || !vm.phone || !vm.photo) return
 
 			var payload= {
 				name: vm.name,
@@ -33,8 +33,6 @@
 				address: vm.address,
 				photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
 			}
-
-			console.log(payload)
 
 			seekerService.addSeeker(payload, function(response) {
 				vm.name = null
@@ -51,10 +49,8 @@
 				}
 
 				$state.go('seeker')
-
-				console.log(response)
 			}, function(error) {
-				console.log(error)
+				
 			})
 		}
 	}
