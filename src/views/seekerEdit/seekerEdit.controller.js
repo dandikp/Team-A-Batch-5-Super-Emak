@@ -45,27 +45,16 @@
 		}
 
 		function editSeeker() {
-			if (!vm.name || !vm.username || !vm.password || !vm.email) return
-			
-			if (!vm.photo) {
-				var payload = {
-					name: vm.name,
-					username: vm.username,
-					password: vm.password,
-					email: vm.email,
-					phone: vm.phone,
-					address: vm.address
-				}
-			} else {
-				var payload = {
-					name: vm.name,
-					username: vm.username,
-					password: vm.password,
-					email: vm.email,
-					phone: vm.phone,
-					address: vm.address,
-					photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
-				}
+			var payload = {}
+
+			payload = {
+				name: vm.name,
+				username: vm.username,
+				password: vm.password,
+				email: vm.email,
+				phone: vm.phone,
+				address: vm.address,
+				photo: 'data:' + vm.photo.filetype + ';base64,' + vm.photo.base64
 			}
 
 			seekerService.editSeeker(vm.id, payload, function(response) {
@@ -81,10 +70,14 @@
 					filesize: '',
 					base64: ''
 				}
-				console.log(response)
-				$state.go('seeker')
+
+				Promise.prototype.then(function() {
+					console.log(response)
+					$state.go('seeker')
+				})
 			}, function(error) {
 				console.log(error)
+
 			})
 		}
 	}

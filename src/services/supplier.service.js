@@ -3,7 +3,7 @@
     .module('app')
     .factory('supplierService', service)
 
-  service.$inject = ['$http']
+  service.$inject = ['$window', '$http']
 
   function service($window, $http) {
     var service = {}

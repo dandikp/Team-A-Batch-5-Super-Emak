@@ -2,13 +2,13 @@
 	angular.module('app')
 		.factory('seekerService', seekerService)
 
-	seekerService.$inject = ['$http']
+	seekerService.$inject = ['$http', '$window']
 
-	function seekerService($http) {
+	function seekerService($http, $window) {
 		var service = {}
 		var baseUrl = 'https://mamabison-dev.herokuapp.com/api/v1/emaks'
 		var headers = {
-			'Access-Control-Allow-Origin': '*'
+			'Authorization': $window.localStorage.getItem('token')
 		}
 
 		service.seeker = []
@@ -54,7 +54,8 @@
 			$http({
 				method: 'GET',
 				url: baseUrl + '/' + id,
-				data: ''
+				data: '',
+				headers: headers
 			})
 				.then(function(response) {
 					onSuccess(response.data.data)
@@ -64,11 +65,9 @@
 		}
 
 		function addSeeker(payload, onSuccess, onError) {
-			$http({
-				method: 'POST',
-				url: baseUrl,
-				headers: headers,
-				data: {
+			var data = {}
+
+			data = {
 					name: payload.name,
 					username: payload.username,
 					password: payload.password,
@@ -76,7 +75,13 @@
 					email: payload.email,
 					address: payload.address,
 					photo: payload.photo
-				}
+			}
+
+			$http({
+				method: 'POST',
+				url: baseUrl,
+				headers: headers,
+				data: data
 			})
 				.then(function(response) {
 					onSuccess(response.status)
@@ -86,19 +91,23 @@
 		}
 
 		function editSeeker(id, payload, onSuccess, onError) {
+			var data = {}
+
+			data = {
+				name: payload.name,
+				username: payload.username,
+				password: payload.password,
+				phone: payload.phone,
+				email: payload.email,
+				address: payload.address,
+				photo: payload.photo
+			}
+			
 			$http({
 				method: 'PUT',
 				url: baseUrl + '/' + id,
 				headers: headers,
-				data: {
-					id: id,
-					name: vm.name,
-					username: vm.username,
-					password: vm.password,
-					phone: vm.phone,
-					email: vm.email,
-					address: vm.address
-				}
+				data: data
 			})
 				.then(function(response) {
 					onSuccess(response.status)

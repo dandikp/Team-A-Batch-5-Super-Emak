@@ -22,9 +22,9 @@
 		vm.addSeeker = addSeeker
 
 		function addSeeker() {
-			if (!vm.name || !vm.username || !vm.password || !vm.email) return
+			if (!vm.name || !vm.username || !vm.password || !vm.email || vm.phone || vm.photo) return
 
-			var payload = {
+			var payload= {
 				name: vm.name,
 				username: vm.username,
 				password: vm.password,
@@ -43,7 +43,12 @@
 				vm.email = null
 				vm.phone = null
 				vm.address = null
-				vm.photo = null
+				vm.photo = {
+					filename: '',
+					filetype: '',
+					filesize: '',
+					base64: ''
+				}
 
 				$state.go('seeker')
 

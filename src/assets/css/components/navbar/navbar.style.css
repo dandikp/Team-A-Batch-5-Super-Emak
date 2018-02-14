@@ -112,3 +112,5 @@
     color: #282828; }
     .navbar__nav i {
       margin: 5px; }
+    .navbar__nav:hover {
+      cursor: pointer; }

@@ -10,7 +10,7 @@ module.exports = {
 			'./node_modules/@uirouter/angularjs/release/angular-ui-router.js',
 			'./node_modules/angular-base64-upload/src/angular-base64-upload.js',
 			'./src/**/*.module.js',
-			'./src/**/*.routes.js',
+			'./src/**/*.routes.config.js',
 			'./src/**/*.service.js',
 			'./src/**/*.controller.js',
 			'./src/**/*.component.js'

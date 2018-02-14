@@ -9,38 +9,42 @@
                     <h3 class="seeker-add__content-title">Add Seeker</h3>
                     <div class="seeker-add__content">
                         <form ng-submit="vm.addSeeker()" class="seeker-add__form" enctype="multipart/form-data">
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Name</label>
-                                <input ng-model="vm.name" type="text" class="seeker-add__input" required="required">
+                            <div class="seeker-add__col seeker-add__col--50">
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Name</label>
+                                    <input ng-model="vm.name" type="text" class="seeker-add__input" required="required">
+                                </div>
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Phone Number</label>
+                                    <input ng-model="vm.phone" type="text" class="seeker-add__input" required="required">
+                                </div>
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Email</label>
+                                    <input ng-model="vm.email" type="email" class="seeker-add__input" required="required">
+                                </div>
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Address</label>
+                                    <textarea ng-model="vm.address" class="seeker-add__input"></textarea>
+                                </div>
                             </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Username</label>
-                                <input ng-model="vm.username" type="text" class="seeker-add__input" required="required">
-                            </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Phone Number</label>
-                                <input ng-model="vm.phone" type="text" class="seeker-add__input" required="required">
-                            </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Password</label>
-                                <input ng-model="vm.password" type="password" class="seeker-add__input" required="required">
-                            </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Email</label>
-                                <input ng-model="vm.email" type="email" class="seeker-add__input" required="required">
-                            </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Photo</label>
-                                <input ng-model="vm.photo" 
-                                    name="photo" 
-                                    type="file" 
-                                    class="seeker-add__input" 
-                                    base-sixty-four-input accept="image/*">
-                                <img ng-if="vm.photo.base64" ng-src="data:{{ vm.photo.filetype }};base64,{{ vm.photo.base64 }}" class="seeker-add__profile-photo" style="height: 50px; margin-top: 18px;">
-                            </div>
-                            <div class="seeker-add__input-group">
-                                <label class="seeker-add__input-label">Address</label>
-                                <textarea ng-model="vm.address" class="seeker-add__input"></textarea>
+                            <div class="seeker-add__col seeker-add__col--50">
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Username</label>
+                                    <input ng-model="vm.username" type="text" class="seeker-add__input" required="required">
+                                </div>
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Password</label>
+                                    <input ng-model="vm.password" type="password" class="seeker-add__input" required="required">
+                                </div>
+                                <div class="seeker-add__input-group">
+                                    <label class="seeker-add__input-label">Photo</label>
+                                    <input ng-model="vm.photo" 
+                                        name="photo" 
+                                        type="file" 
+                                        class="seeker-add__input" 
+                                        base-sixty-four-input accept="image/*" required="required">
+                                    <img ng-if="vm.photo.base64" ng-src="data:{{ vm.photo.filetype }};base64,{{ vm.photo.base64 }}" class="seeker-add__profile-photo" style="height: 50px; margin-top: 18px;">
+                                </div>
                             </div>
                             <div class="seeker-add__button-group">
                                 <button class="seeker-add__button seeker-add__button--padding-lg seeker-add__button--danger" type="reset">
