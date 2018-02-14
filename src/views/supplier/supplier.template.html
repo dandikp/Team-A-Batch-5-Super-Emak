@@ -58,9 +58,11 @@
                 </tbody>
               </table>
             </div>
-            <button ng-click="vm.getSupplierPerPage(vm.currentPage - 1)"> Previous </button>
-            <button ng-repeat="i in vm.totalPage track by $index" ng-click="vm.getSupplierPerPage($index + 1)">{{ $index + 1 }}</button>
-            <button ng-click="vm.getSupplierPerPage(vm.currentPage + 1)"> Next </button>
+            <ul class="supplier__pagination">
+							<li class="supplier__page"><button ng-click="vm.getSupplierPerPage(vm.currentPage - 1)" class="supplier__button supplier__button--padding-md supplier__button--link" title="Add supplier">Prev</button></li>
+							<li ng-repeat="i in vm.totalPage track by $index" class="supplier__page"><button ng-click="vm.getSupplierPerPage($index + 1)" class="supplier__button supplier__button--padding-md supplier__button--link">{{ $index + 1 }}</button></li>
+							<li class="supplier__page"><button ng-click="vm.getSupplierPerPage(vm.currentPage + 1)" class="supplier__button supplier__button--padding-md supplier__button--link">Next</button></li>
+						</ul>
           </div>
           <div ng-if="!vm.dataFetched">Fetching data...</div>
         </div>

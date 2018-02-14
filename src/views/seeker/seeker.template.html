@@ -47,9 +47,11 @@
 								</tbody>
 							</table>
 						</div>
-						<button ng-click="vm.getSeekersPerPage(vm.currentPage - 1)"> Previous </button>
-						<button ng-repeat="i in vm.totalPage track by $index" ng-click="vm.getSeekersPerPage($index + 1)">{{ $index + 1 }}</button>
-						<button ng-click="vm.getSeekersPerPage(vm.currentPage + 1)"> Next </button>
+						<ul class="seeker__pagination">
+							<li class="seeker__page"><button ng-click="vm.getSeekersPerPage(vm.currentPage - 1)" class="seeker__button seeker__button--padding-md seeker__button--link" title="Add Seeker">Prev</button></li>
+							<li ng-repeat="i in vm.totalPage track by $index" class="seeker__page"><button ng-click="vm.getSeekersPerPage($index + 1)" class="seeker__button seeker__button--padding-md seeker__button--link">{{ $index + 1 }}</button></li>
+							<li class="seeker__page"><button ng-click="vm.getSeekersPerPage(vm.currentPage + 1)" class="seeker__button seeker__button--padding-md seeker__button--link">Next</button></li>
+						</ul>
 					</div>
 					<div ng-if="!vm.dataFetched">
 						<div class="seeker__loader">

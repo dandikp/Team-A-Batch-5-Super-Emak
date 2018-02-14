@@ -122,6 +122,19 @@
                 color: #ffffff;
             }
         }
+
+        &--link {
+            box-shadow: unset;
+            background-color: #ffffff;
+            border: 1px solid #282828;
+            color: #282828;
+            &:visited {
+                color: #282828;
+            }
+            &:hover{
+                text-decoration: #282828;
+            }
+        }
     }
 
     &__button-icon {
@@ -224,5 +237,23 @@
         flex-wrap: nowrap;
         justify-content: center;
         align-content: center;
+    }
+
+    &__pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        padding-left: 0;
+        position: relative;
+        margin-top: 20px;
+        list-style-type: none;
+    }
+
+    &__page {
+        margin-left: 1px;
+        margin-right: 4px;
+        display: inline-flex;
+        padding: 0;
     }
 }

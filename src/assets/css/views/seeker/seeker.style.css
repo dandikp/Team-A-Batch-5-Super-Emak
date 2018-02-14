@@ -103,6 +103,17 @@
       color: #ffffff; }
       .seeker__button--danger:visited {
         color: #ffffff; }
+    .seeker__button--link {
+      -webkit-box-shadow: unset;
+              box-shadow: unset;
+      background-color: #ffffff;
+      border: 1px solid #282828;
+      color: #282828; }
+      .seeker__button--link:visited {
+        color: #282828; }
+      .seeker__button--link:hover {
+        -webkit-text-decoration: #282828;
+                text-decoration: #282828; }
   .seeker__button-icon {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -201,3 +212,25 @@
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center; }
+  .seeker__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    padding-left: 0;
+    position: relative;
+    margin-top: 20px;
+    list-style-type: none; }
+  .seeker__page {
+    margin-left: 1px;
+    margin-right: 4px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding: 0; }
