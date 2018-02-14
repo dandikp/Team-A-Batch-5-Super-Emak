@@ -39,7 +39,7 @@
         vm.username = vm.currentSupplier.username
         vm.email = vm.currentSupplier.email
         // vm.password = vm.currentSupplier.password
-        vm.phone = vm.currentSupplier.phone * 1
+        vm.phone = vm.currentSupplier.phone
         vm.company_address = vm.currentSupplier.company_address
         vm.company_profile = vm.currentSupplier.company_profile
         vm.photo.url = vm.currentSupplier.photo.url
