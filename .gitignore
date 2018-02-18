@@ -2,6 +2,10 @@
 #########
 index.html
 
+# CSS #
+#######
+src/assets/css
+
 # SASS #
 ########
 .sass-cache
