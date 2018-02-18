@@ -31,7 +31,6 @@
       })
         .then(function (response) {
           onSuccess(response.data)
-          console.log(response)
 
         }, function (response) {
           onError(response.statusText)

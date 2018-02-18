@@ -21,16 +21,17 @@
       filesize: '',
       base64: ''
     }
+    vm.init = init
     vm.company_address = null
     vm.company_profile = null
-    vm.isEditing = false
-    //
+    vm.isEditing = false    
     vm.getSupplierById = getSupplierById
     vm.editSupplier = editSupplier
 
-    getSupplierById()
+    function init() {
+      getSupplierById()
+    }
 
-    ////
     function getSupplierById() {
       supplierService.getSupplierById($stateParams.id, function (response) {
         vm.currentSupplier = response
@@ -38,14 +39,13 @@
         vm.name = vm.currentSupplier.name
         vm.username = vm.currentSupplier.username
         vm.email = vm.currentSupplier.email
-        // vm.password = vm.currentSupplier.password
         vm.phone = vm.currentSupplier.phone
         vm.company_address = vm.currentSupplier.company_address
         vm.company_profile = vm.currentSupplier.company_profile
         vm.photo.url = vm.currentSupplier.photo.url
 
       }, function (error) {
-        $window.alert(error)
+        console.error(error)
 
       })
     }
@@ -72,6 +72,7 @@
         $state.go('supplier')
 
       }, function (error) {
+        console.error(error)
 
       })
     }

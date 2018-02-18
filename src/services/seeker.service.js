@@ -30,8 +30,10 @@
 			})
 				.then(function(response) {
 					onSuccess(response.data)
+
 				}, function(response) {
-					onError('Couldn\'t Fetch Data')
+					onError(response.status)
+					
 				})
 		}
 
@@ -43,9 +45,10 @@
         data: ''
       })
         .then(function (response) {
-          onSuccess(response.data.total_emak)
+					onSuccess(response.data.total_emak)
+					
         }, function (response) {
-          onError(response.statusStext)
+          onError(response.status)
 
         })
     }
@@ -59,8 +62,10 @@
 			})
 				.then(function(response) {
 					onSuccess(response.data.data)
+
 				}, function(response) {
-					onError(response.status)
+					onError(response.statusText)
+
 				})
 		}
 
@@ -68,13 +73,13 @@
 			var data = {}
 
 			data = {
-					name: payload.name,
-					username: payload.username,
-					password: payload.password,
-					phone: payload.phone,
-					email: payload.email,
-					address: payload.address,
-					photo: payload.photo
+				name: payload.name,
+				username: payload.username,
+				password: payload.password,
+				phone: payload.phone,
+				email: payload.email,
+				address: payload.address,
+				photo: payload.photo
 			}
 
 			$http({
@@ -84,9 +89,11 @@
 				data: data
 			})
 				.then(function(response) {
-					onSuccess(response.status)
+					onSuccess(response.statusText)
+					
 				}, function(response) {
-					onError(response)
+					onError(response.statusText)
+
 				})
 		}
 
@@ -110,9 +117,11 @@
 				data: data
 			})
 				.then(function(response) {
-					onSuccess(response.status)
+					onSuccess(response.statusText)
+
 				}, function(response) {
-					onError(response)
+					onError(response.statusText)
+
 				})
 		}
 
@@ -123,9 +132,11 @@
 				headers: headers
 			})
 				.then(function(response) {
-					onSuccess(response.status)
+					onSuccess(response.statusText)
+
 				}, function (response) {
-					onError(response)
+					onError(response.statusText)
+
 				})
 		}
 	}

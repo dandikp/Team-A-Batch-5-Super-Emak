@@ -39,7 +39,9 @@
 				vm.phone = response.phone
 				vm.address = response.address
 				vm.photo = response.photo
+				
 			}, function(error) {
+				console.error(error)
 				
 			})
 		}
@@ -75,8 +77,10 @@
 
 				vm.isEditing = false
 				$state.go('seeker')
-			}, function(error) {
 
+			}, function(error) {
+				console.error(error)
+				
 			})
 		}
 	}

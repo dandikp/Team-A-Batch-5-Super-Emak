@@ -1,6 +1,6 @@
 <navbar></navbar>
 <side-nav></side-nav>
-<div class="main__wrapper">
+<div class="main__wrapper" ng-init="vm.init()">
   <div class="main">
     <h2 class="main__title">Supplier</h2>
     <div class="supplier__wrapper">
@@ -46,12 +46,12 @@
                     <td>{{ supplier.company_profile }}</td>
                     <td>{{ supplier.company_address }}</td>
                     <td>
-                      <img ng-if="supplier.photo.url" ng-src="{{supplier.photo.url}}" alt="Profile photo" style="height: 50px;">
+                      <img ng-if="supplier.photo.url" ng-src="{{supplier.photo.url}}" alt="Profile Photo" style="height: 50px;">
                     </td>
                     <td>
 											<div class="supplier__action-group">
 												<a ui-sref="supplierEdit({ id: supplier.id })" class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Edit supplier"><span class="supplier__button-icon"><i class="fa fa-edit"></i></span></a>
-												<a class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Delete supplier" ng-click="vm.deletesupplier(supplier.id)"><span class="supplier__button-icon"><i class="fa fa-trash"></i></span></a>
+												<a class="supplier__button supplier__button--margin-x-xs supplier__button--padding-xs" title="Delete supplier" ng-click="vm.deleteSupplier(supplier.id)"><span class="supplier__button-icon"><i class="fa fa-trash"></i></span></a>
 											</div>
                     </td>
                   </tr>
@@ -64,7 +64,7 @@
 							<li class="supplier__page"><button ng-click="vm.getSupplierPerPage(vm.currentPage + 1)" class="supplier__button supplier__button--padding-md supplier__button--link">Next</button></li>
 						</ul>
           </div>
-          <div ng-if="!vm.dataFetched">Fetching data...</div>
+          <div ng-if="!vm.dataFetched">{{ vm.dataStatus }}</div>
         </div>
       </div>
     </div>

@@ -12,12 +12,10 @@
       'Authorization': $window.localStorage.getItem('token')
     }
 
-
     service.getTotalJobs = getTotalJobs
 
     return service
 
-    /////////////////
     function getJobsPerPage(page, dataPerpage, onSuccess, onError) {
       $http({
         method: 'GET',
@@ -84,7 +82,7 @@
     }
 
     function editJob(id, payload, onSuccess, onError) {
-
+      //FIXME
     }
   }
 })();

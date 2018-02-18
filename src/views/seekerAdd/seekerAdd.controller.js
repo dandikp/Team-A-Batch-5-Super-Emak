@@ -49,7 +49,9 @@
 				}
 
 				$state.go('seeker')
+
 			}, function(error) {
+				console.error(error)
 				
 			})
 		}

@@ -9,38 +9,44 @@
 		vm.totalJobs = null
 		vm.totalSeeker = null
 		vm.totalSupplier = null
-
+		vm.init = init
 		vm.getTotalJobs = getTotalJobs
 		vm.getTotalSeeker = getTotalSeeker
 		vm.getTotalSupplier = getTotalSupplier
 
-		//
-		getTotalJobs()
-		getTotalSeeker()
-		getTotalSupplier()
+		function init() {
+			vm.getTotalJobs()
+			vm.getTotalSeeker()
+			vm.getTotalSupplier()
+		}
 
-		/////////////
 		function getTotalJobs() {
 			jobsService.getTotalJobs(function (response) {
 				vm.totalJobs = response
-			}, function (response) {
-				// do something hehehehehehhhhhhhhhh
+
+			}, function (error) {
+				console.error(error)
+				
 			})
 		}
 
 		function getTotalSeeker() {
 			seekerService.getTotalSeeker(function (response) {
 				vm.totalSeeker = response
-			}, function (response) {
-				// something to handle errors
+
+			}, function (error) {
+				console.error(error)
+
 			})
 		}
 
 		function getTotalSupplier() {
 			supplierService.getTotalSupplier(function (response) {
 				vm.totalSupplier = response
-			}, function (response) {
-				//     $window.alert(response)
+
+			}, function (error) {
+				console.error(error)
+
 			})
 		}
 	}

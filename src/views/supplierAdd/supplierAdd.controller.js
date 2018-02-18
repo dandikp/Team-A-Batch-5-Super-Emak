@@ -19,10 +19,8 @@
     }
     vm.company_address = null
     vm.company_profile = null
-    //
     vm.addSupplier = addSupplier
 
-    ////
     function addSupplier() {
       if (!vm.name || !vm.username || !vm.email || !vm.password ||
         !vm.phone || !vm.company_address || !vm.company_profile || !vm.photo.base64) return
@@ -49,7 +47,9 @@
         vm.photo = null
 
         $state.go('supplier')
+
       }, function (error) {
+        console.error(error)
         
       })
     }

@@ -4,5 +4,7 @@
 	
 	JobsController.$inject = []
 
-	function JobsController() { }
+	function JobsController() {
+		//FIXME
+	}
 })();

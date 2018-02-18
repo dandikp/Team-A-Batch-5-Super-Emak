@@ -12,8 +12,6 @@
 
     vm.login = login
 
-     ////////
-
     function login() {
       if (!vm.username || !vm.password) return
       

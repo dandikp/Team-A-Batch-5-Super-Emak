@@ -12,13 +12,14 @@
     vm.dataPerPage = 10
     vm.totalPage = -1
     vm.currentPage = null
-    //
+    vm.init = init
     vm.getSupplierPerPage = getSupplierPerPage
     vm.deleteSupplier = deleteSupplier
+    vm.dataStatus = ''
 
-    getSupplierPerPage(1)
-
-    ////
+    function init() {
+      getSupplierPerPage(1)
+    }    
 
     function getSupplierPerPage(page) {
       if (vm.currentPage === page) return
@@ -27,6 +28,7 @@
 
       vm.dataFetched = false
       vm.currentPage = page
+      vm.dataStatus = 'Fetching data...'
 
       supplierService.getSupplierPerPage(page, vm.dataPerPage, function (data) {
         vm.supplier = data.data
@@ -34,7 +36,9 @@
         vm.dataFetched = true
 
       }, function (error) {
-
+        console.error(error)
+        vm.dataStatus = 'Couldn\'t fetch data. Try again later'
+        
       })
     }
 
@@ -42,10 +46,14 @@
       vm.dataFetched = false
       supplierService.deleteSupplier(index, function (response) {
         vm.currentPage = null
-        vm.getSupplierPerPage(1)
+        vm.init()
+
       }, function (error) {
         vm.currentPage = null
-        vm.getSupplierPerPage(1)
+        vm.init()
+        
+        console.error(error)
+
       })
     }
 

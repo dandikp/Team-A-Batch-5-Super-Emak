@@ -15,7 +15,6 @@
 
     return auth
 
-    ////
     function login(username, password, onSuccess, onError) {
       $http({
         url: baseUrl,
@@ -35,7 +34,7 @@
 
           }
         }, function (response) {
-          console.log(response)
+          console.error(response)
 
         })
     }

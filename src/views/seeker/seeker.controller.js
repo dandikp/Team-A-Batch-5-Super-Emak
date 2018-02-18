@@ -12,7 +12,6 @@
 		vm.totalPage = -1
 		vm.currentPage = null
 		vm.dataStatus = ''
-
 		vm.init = init
 		vm.getSeekersPerPage = getSeekersPerPage
 		vm.deleteSeeker = deleteSeeker
@@ -34,8 +33,11 @@
 				vm.seeker = data.data
 				vm.totalPage = new Array(data.total_page)
 				vm.dataFetched = true
+
 			}, function(error) {
 				vm.dataStatus = 'Couldn\'t fetch data. Try again later'
+				console.error(error)
+
 			})
 		}
 
@@ -45,8 +47,13 @@
 			seekerService.deleteSeeker(id, function(response) {
 				vm.currentPage = null
 				vm.init()
+
 			}, function(error) {
-				
+				vm.currentPage = null
+				vm.init()
+
+				console.error(error)
+
 			})
 		}
 	}
