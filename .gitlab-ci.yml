@@ -9,14 +9,12 @@ stages:
   - build
   - clean_up
 
-deploy: 
-  skip_cleanup: true
-
 build_and_deploy_prod:
   stage: build
   script:
     - 'gem install dpl'
     - 'dpl --provider=heroku --app=super-emak --api-key=56a16017-5a3f-4949-894d-696bd7e60c67'
+  skip_cleanup: true
   only:
     - cms-dev
     - develop
