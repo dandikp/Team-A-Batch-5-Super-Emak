@@ -1,4 +1,3 @@
-
 var gulp = require('gulp')
 var config =  require('./gulpfile.config')
 var devConfig = config.dev
@@ -16,7 +15,6 @@ var cleanCSS = require('gulp-clean-css')
 var imagemin = require('gulp-imagemin')
 var cache = require('gulp-cache')
 var debug = require('gulp-debug')
-
 
 /** DEV MODE */
 
@@ -81,7 +79,7 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./dist/src/js'))
 })
 
-gulp.task('minify-css', function () {
+gulp.task('minify-css', function() {
   return gulp.src(devConfig.css)
     .pipe(sourcemaps.init())
     .pipe(postcss([autoprefixer()]))
@@ -91,7 +89,7 @@ gulp.task('minify-css', function () {
     .pipe(gulp.dest('./dist/src/assets/css/production/main'))
 })
 
-gulp.task('minify-img', function () {
+gulp.task('minify-img', function() {
   return gulp.src(devConfig.img)
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('./dist/src/assets/img'))
@@ -102,7 +100,7 @@ gulp.task('handle-fontawesome', function() {
     .pipe(gulp.dest('./dist/src/assets/css/production/fonts'))
 })
 
-gulp.task('handle-views', function () {
+gulp.task('handle-views', function() {
   return gulp.src(devConfig.views)
     .pipe(gulp.dest('./dist/src'))
 })
