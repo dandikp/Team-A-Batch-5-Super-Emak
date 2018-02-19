@@ -8,6 +8,8 @@ Ada 2 versi untuk front-end Super Emak:
 ### Jenis Website
 ##### Landing Page
    Landing Page adalah halaman depan dari Website Super Emak yang berisi penjelasan tentang aplikasi Super Emak
+
+
    Link Demo :
    [Landing Page Super Emak](http://superemak.herokuapp.com "Landing Page Super Emak")
 ##### CMS
