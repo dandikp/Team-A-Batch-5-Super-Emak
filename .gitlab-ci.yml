@@ -3,7 +3,8 @@ image: 'node:carbon'
 before_script:
   - 'apt-get update -yq'
   - 'apt-get install -y ruby ruby-dev rubygems-integration'
-  - 'touch init.js'
+  - 'npm install --silent'
+  - 'npm install -g gulp-cli'
   
 stages:
   - build
@@ -12,6 +13,8 @@ stages:
 build_and_deploy_prod:
   stage: build
   script:
+    - 'gem install sass'
+    - 'gulp build'
     - 'gem install dpl'
     - 'dpl --provider=heroku --app=super-emak --api-key=56a16017-5a3f-4949-894d-696bd7e60c67 --skip-cleanup=true'
   only:
