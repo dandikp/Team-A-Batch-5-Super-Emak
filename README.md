@@ -1,8 +1,8 @@
 Super Emak
 ==========
 Ada 2 versi untuk front-end Super Emak:
-1. Landing Page
-2. CMS
+1. Landing Page (*branch: landing_page*)
+2. CMS  (*branch: develop*)
 
 
 ### Jenis Website
