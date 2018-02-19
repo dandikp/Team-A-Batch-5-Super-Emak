@@ -51,7 +51,7 @@ Untuk versi pengembangan CMS Super Emak ada 2 versi:
    1. Install dependencies dari CMS Super Emak : `npm install` / `yarn` / `yarn install`
 
 
-      *Catatan: Hanya jalankan langkah nomor 2 dan 3 jika terdapat kesalahan saat me-run gulp dev karena gulp-cli akan otomatis terinstall serta folder build akan otomatis dijalankan saat proses npm install*
+      *Catatan: Hanya jalankan langkah nomor 2 dan 3 jika terdapat kesalahan saat me-run gulp dev karena gulp-cli akan otomatis terinstall serta folder dist akan otomatis dijalankan saat proses npm install*
    2. Install Gulp CLI untuk menjalankan proses build : `npm install -g gulp-cli` / `yarn global add gulp-cli`
 
 
