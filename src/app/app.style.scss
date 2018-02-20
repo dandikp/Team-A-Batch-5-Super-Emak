@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, input, textarea, button {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.view-wrapper {
+  padding-left: 230px;
+}
+
+a {
+  color: rgb(40, 40, 40);
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: transparent;
+    padding: 0 24px;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+        padding: 0 16px;
+    }
+
+    &__wrapper {
+        margin: 56px 0 0 240px;
+        padding: 12px 0;
+        position: relative;
+        width: calc(100% - 240px);
+        min-height: calc(100% - 56px);
+        overflow-y: auto;
+        background-color: transparent;
+
+        @media screen and (max-width: 960px) {
+            margin-left: 0px;
+            width: 100%;
+        }
+    }
+}

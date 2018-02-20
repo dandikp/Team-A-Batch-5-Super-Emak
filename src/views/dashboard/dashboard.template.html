@@ -1,0 +1,38 @@
+<navbar></navbar>
+<side-nav></side-nav>
+<div class="main__wrapper" ng-init="vm.init()">
+    <div class="main">
+        <h2 class="main__title">Dashboard</h2>
+        <div class="dashboard__wrapper">
+            <div class="dashboard">
+                <div class="dashboard__card-wrapper">
+                    <div class="dashboard__card">
+                        <div class="dashboard__card-icon"><img ng-src="./src/assets/img/seeker-ic.svg" alt="Seeker"></div>
+                        <div class="dashboard__card-content">
+                            <h5 class="dashboard__card-title">Total Jobseeker</h5>
+                            <h4 class="dashboard__card-stat">{{ vm.totalSeeker }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard__card-wrapper">
+                    <div class="dashboard__card">
+                        <div class="dashboard__card-icon"><img ng-src="./src/assets/img/supplier-ic.svg" alt="Supplier"></div>
+                        <div class="dashboard__card-content">
+                            <h5 class="dashboard__card-title">Total Supplier</h5>
+                            <h4 class="dashboard__card-stat">{{ vm.totalSupplier }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard__card-wrapper">
+                    <div class="dashboard__card">
+                        <div class="dashboard__card-icon"><img ng-src="./src/assets/img/jobs-ic.svg" alt="Jobs"></div>
+                        <div class="dashboard__card-content">
+                            <h5 class="dashboard__card-title">Total Jobs</h5>
+                            <h4 class="dashboard__card-stat">{{ vm.totalJobs }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

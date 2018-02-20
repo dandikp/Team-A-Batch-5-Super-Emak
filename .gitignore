@@ -1,0 +1,29 @@
+# INDEX #
+#########
+index.html
+
+# CSS #
+#######
+src/assets/css
+
+# SASS #
+########
+.sass-cache
+.sass-cache/*
+*.map
+
+# NODE MODULES #
+################
+node_modules
+
+# DIST DIRECTORY #
+##################
+dist
+
+# YARN LOCK FILE #
+##################
+yarn.lock
+
+
+
+# Ignoring yarn.lock file, because package-lock.json will be used in heroku #

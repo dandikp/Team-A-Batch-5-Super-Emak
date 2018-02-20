@@ -1,0 +1,17 @@
+<div class="login__wrapper">
+  <div class="login">
+    <div class="login__logo-wrapper">
+      <img ng-src="./src/assets/img/logo-letter.png" class="login__logo">
+    </div>
+    <div class="login__subtitle">Login</div>
+    <form ng-submit="vm.login()">
+      <div class="login__input-group">
+        <input class="login__input-field" ng-model="vm.username" name="username" type="text" placeholder="Username" required>
+      </div>
+      <div class="login__input-group">
+        <input class="login__input-field" ng-model="vm.password" name="password" type="password" placeholder="Password" required>
+      </div>
+      <button class="login__button" type="submit">Login</button>
+    </form>
+  </div>
+</div>

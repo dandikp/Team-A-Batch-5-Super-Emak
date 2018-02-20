@@ -1,0 +1,72 @@
+<navbar></navbar>
+<side-nav></side-nav>
+<div class="main__wrapper">
+    <div class="main">
+        <h2 class="main__title">Supplier</h2>
+        <div class="supplier-add__wrapper">
+            <div class="supplier-add">
+                <div class="supplier-add__content-wrapper">
+                    <h3 class="supplier-add__content-title">Add Supplier</h3>
+                    <div class="supplier-add__content">
+                        <form ng-submit="vm.addSupplier()" class="supplier-add__form" enctype="multipart/form-data">
+                            <div class="supplier-add__col supplier-add__col--50">
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Name</label>
+                                    <input ng-model="vm.name" type="text" class="supplier-add__input" required>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Email</label>
+                                    <input ng-model="vm.email" type="email" class="supplier-add__input" required>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Phone Number</label>
+                                    <input ng-model="vm.phone" type="text" class="supplier-add__input" required>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Company Profile</label>
+                                    <textarea ng-model="vm.company_profile" class="supplier-add__input" required></textarea>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Company Address</label>
+                                    <textarea ng-model="vm.company_address" class="supplier-add__input" required></textarea>
+                                </div>
+                                <div class="supplier-add__button-group">
+                                    <a ui-sref="supplier">
+                                        <button class="supplier-add__button supplier-add__button--padding-lg supplier-add__button--danger" type="reset">
+                                            <span class="supplier-add__button-icon supplier-add__button-icon--margin-sm">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+                                            Cancel
+                                        </button>
+                                    </a>
+                                    <button class="supplier-add__button supplier-add__button--padding-lg supplier-add__button--success supplier-add__button--margin-x-sm"
+                                        type="submit">
+                                        <span class="supplier-add__button-icon supplier-add__button-icon--margin-sm">
+                                            <i class="fa fa-save"></i>
+                                        </span>
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="supplier-add__col supplier-add__col--50">
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Username</label>
+                                    <input ng-model="vm.username" type="text" class="supplier-add__input" required>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Password</label>
+                                    <input ng-model="vm.password" type="password" class="supplier-add__input" required>
+                                </div>
+                                <div class="supplier-add__input-group">
+                                    <label class="supplier-add__input-label">Photo</label>
+                                    <input ng-model="vm.photo" class="supplier-add__input" type="file" name="Photo" base-sixty-four-input accept="image/*" required>
+                                    <img ng-if="vm.photo.base64" ng-src="data:{{ vm.photo.filetype }};base64,{{ vm.photo.base64 }}" style="height: 75px; margin-top: 18px;" alt="photo">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
